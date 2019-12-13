@@ -1,0 +1,86 @@
+.registrationbox{
+  width: 1000px;
+  height: 493px;
+  background: #000;
+  color: #fff;
+  top: 52%;
+  left: 52%;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  padding:60px 30px;
+  border-radius:20px;
+  opacity:0.7;
+  overflow:hidden;
+}
+
+.registrationbox_container{
+  overflow-y:scroll;
+  position:absolute;
+}
+
+.registrationbox:hover{
+  opacity:1.0;
+}
+.img_signUp{
+  width: 70px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left:calc(50% - 50px);
+}
+
+.registrationbox input{
+  width:30%;
+  margin-bottom:5px;
+}
+
+.registrationbox input[type="text"], input[type="password"],input[type="email"],input[type="number"]{
+  border:none;
+  border-bottom:1px solid #fff;
+  background: transparent;
+  outline:none;
+  height:20px;
+  color: #fff;
+  font-size:14px;
+}
+
+.registrationbox input[type="submit"]{
+  border:none;
+  background: #fb2525;
+  outline:none;
+  height:40px;
+  color: #fff;
+  font-size:18px;
+  border-radius:20px;
+  left:35%;
+  position:relative;
+}
+
+.registrationbox input[type="submit"]:hover{
+  background: lightblue;
+  cursor:pointer;
+  color:#000;
+}
+
+.label {
+  float:left;
+  margin: -5px 0;
+}
+
+.registrationbox a{
+  text-decoration:none;
+  font-size: 14px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.registrationbox a:hover{
+  color: #ffc107;
+}
+
+.frm-cntrl-email{
+  display: flex;
+  flex-direction: column;
+}

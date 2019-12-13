@@ -1,0 +1,27 @@
+<div id="login" class="loginbox">
+  <!--<img src="assets/img/avatar.jpg" class="avatar">-->
+  <form>
+    <div>
+      <h3>User Login</h3>
+    </div>
+    <div>
+      <p>User Name</p>
+      <input type="text" name="txt_UserName" placeholder="Enter Username"/>
+    </div>
+    <div>
+      <p>Password</p>
+      <input type="password" name="txt_Password" placeholder="Enter Password"/>
+    </div>
+    <div>
+      <input type="Submit" name="btn_Submit" value="Login"/>
+    </div>
+    <div>
+      <input type="checkbox" id="chk_RememberMe" value="RememberMe" checked>
+      <label for="chk_RememberMe">Remember Me</label>
+    </div>
+    <div>
+      <a href="#01">Forgot Password?</a>
+      <a [routerLink]="['/register']">Sign Up</a>
+    </div>
+  </form>
+</div>
