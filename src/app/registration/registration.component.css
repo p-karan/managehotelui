@@ -1,9 +1,9 @@
 .registrationbox{
   width: 1000px;
-  height: 493px;
+  height: 475px;
   background: #000;
   color: #fff;
-  top: 52%;
+  top: 53%;
   left: 52%;
   position: fixed;
   transform: translate(-50%,-50%);
@@ -15,9 +15,46 @@
 }
 
 .registrationbox_container{
-  overflow-y:scroll;
-  position:absolute;
+  /*overflow-y:scroll;
+  position:absolute;*/
+  display: flex;
+  justify-content: space-evenly;
 }
+
+.frm-cntrl-full-name{
+  display: flex;
+  flex-direction: row;
+}
+
+.frm-cntrl-address{
+  display: flex;
+  flex-direction: row;
+}
+
+.frm-cntrl-email{
+  display: flex;
+  flex-direction: row;
+}
+
+.frm-cntrl-contact{
+  display: flex;
+  flex-direction: row;
+}
+
+.frm-cntrl-frm-cntrl-credential{
+  display: flex;
+  flex-direction: row;
+}
+
+/*.frm-cntrl-password{
+  display: flex;
+  flex-direction: row;
+}*/
+
+/*.frm-cntrl-cnfpassword{
+  display: flex;
+  flex-direction: row;
+}*/
 
 .registrationbox:hover{
   opacity:1.0;
@@ -80,7 +117,3 @@
   color: #ffc107;
 }
 
-.frm-cntrl-email{
-  display: flex;
-  flex-direction: column;
-}
