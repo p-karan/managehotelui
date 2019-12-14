@@ -15,6 +15,7 @@ import { BodySectionMiddleComponent } from './body-section-middle/body-section-m
 import { AccessBoxComponent } from './access-box/access-box.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -35,7 +36,8 @@ const routes: Routes = [
     BodySectionMiddleComponent,
     AccessBoxComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule

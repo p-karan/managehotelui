@@ -58,9 +58,9 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginStatus = 'Invalid user';
       console.log('Status:' + this.loginStatus);
-      this.route.navigate(['/login'])
+      this.route.navigate(['/login']);
     }
-  };
+  }
 
   onSubmit() {
     console.log(this.loginForm.value);
