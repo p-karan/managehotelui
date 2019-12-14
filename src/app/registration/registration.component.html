@@ -2,44 +2,49 @@
   <img src="assets/img/sign_up.jpg" class="img_signUp">
   <div class="registrationbox_container">
     <form>
+      <p>Create your credentials</p>
+      <div class="frm-cntrl-credential">
+        <input type="text" name="txt_UserName" placeholder="User Name [min 6 chars]" required/>&nbsp;
+        <input type="password" name="txt_Password" placeholder="Enter Password" required/>&nbsp;&nbsp;&nbsp;
+        <!--<label>Confirm Password</label>
+        <input type="text" name="txt_Confirm_Pwd" placeholder="Confirm Password" required/>-->
+      </div>
+      <p>Full Name</p>
       <div class="frm-cntrl-full-name">
-        <p>Full Name</p>
-        <input type="text" name="txt_FName" placeholder="First Name" required/>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="txt_MName" placeholder="Middle Name (optional)"/>&nbsp;&nbsp;&nbsp;
+        <input type="text" name="txt_FName" placeholder="First Name" required/>
+        <input type="text" name="txt_MName" placeholder="Middle Name (optional)"/>
         <input type="text" name="txt_LName" placeholder="Last Name" required/>
       </div>
+      <p>Address</p>
       <div class="frm-cntrl-address">
-        <p>Address</p>
-        <input type="text" name="txt_Building" placeholder="Flat/Building" required/>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="txt_Locality" placeholder="Locality" required/>&nbsp;&nbsp;&nbsp;
+        <input type="text" name="txt_Building" placeholder="Flat/Building" required/>
+        <input type="text" name="txt_Locality" placeholder="Locality" required/>
         <input type="text" name="txt_Street" placeholder="Street Name" required/>
-        <input type="text" name="txt_City" placeholder="City" required/>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="txt_State" placeholder="State" required/>&nbsp;&nbsp;&nbsp;
+        <input type="text" name="txt_City" placeholder="City" required/>
+        <input type="text" name="txt_State" placeholder="State" required/>
         <input type="text" name="txt_Pincode" placeholder="Pincode" required pattern="[0-9][0-9][0-9][0-9][0-9][0-9]"/>
       </div>
+      <p>Contact Details</p>
       <div class="frm-cntrl-contact">
-        <p>Contact Details</p>
-        <input type="text" name="txt_MobileNo" placeholder="Mobile No" required pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
-        <input type="text" name="txt_PrimaryPhone" placeholder="Landline 1 (optional)" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
-        <input type="text" name="txt_SecondayPhone" placeholder="Landline 2 (optional)" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
+        <input type="text" name="txt_MobileNo" placeholder="Mobile No" required
+               pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
+        <input type="text" name="txt_PrimaryPhone" placeholder="Landline 1 (optional)"
+               pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
+        <input type="text" name="txt_SecondayPhone" placeholder="Landline 2 (optional)"
+               pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
       </div>
+      <p>Email Id</p>
       <div class="frm-cntrl-email">
-        <p>Email Id</p>
         <input type="email" name="txt_Email" placeholder="Email Id" required/>
-        <p>User-Name</p>
-        <input type="text" name="txt_UserName" placeholder="User Name" required/>&nbsp;
-        <p>Password</p>
-        <input type="password" name="txt_Password" placeholder="Enter Password" required/>&nbsp;&nbsp;&nbsp;
-        <p>Confirm Password</p>
-        <input type="text" name="txt_Confirm_Pwd" placeholder="Confirm Password" required/>
       </div>
+
       <div class="btn-submit">
         <input type="Submit" name="btn_Submit" value="Sign Up"/>
       </div>
 
       <div>
-        <label >Already have an account?</label>&nbsp; &nbsp;
-        <a href="#01">Sign In</a>
+        <label>Already have an account?</label>&nbsp; &nbsp;
+        <a [routerLink]="['/login']">Sign In</a>
       </div>
     </form>
   </div>
