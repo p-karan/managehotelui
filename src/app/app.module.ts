@@ -15,6 +15,7 @@ import { BodySectionMiddleComponent } from './body-section-middle/body-section-m
 import { AccessBoxComponent } from './access-box/access-box.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SearchComponent } from './search/search.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
     AccessBoxComponent,
     LoginComponent,
     RegistrationComponent,
+    SearchComponent,
     MainMenuComponent
   ],
   imports: [
