@@ -1,0 +1,39 @@
+<div class="search-container">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <table>
+        <thead>
+        <tr>
+          <th>City</th>
+          <th>Check-In Date</th>
+          <th>Check-Out Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <ng-container *ngFor="let eachConfig of formConfigSelect">
+          <td>
+            <select formControlName={{eachConfig.name}}>
+              <option *ngFor="let eachCity of City"
+                      [value]='eachCity'>{{eachCity}}</option>
+            </select>
+          </td>
+          </ng-container>
+          <ng-container *ngFor="let eachConfig of formConfig">
+          <td>
+            <input type={{eachConfig.type}} placeholder={{eachConfig.placeholder}}
+                   formControlName={{eachConfig.name}}>
+          </td>
+          <!--<td>
+            <input type="date" name="date_toDate">
+          </td>-->
+          </ng-container>
+          <td>
+            <input type="Submit" name="btn_Submit" value="Search"/>
+            <!--<button (click)="fetch""Search"/>-->
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+  </form>
+</div>
