@@ -12,7 +12,17 @@ import { BodyComponent } from './body/body.component';
 import { BodySectionLeftComponent } from './body-section-left/body-section-left.component';
 import { BodySectionRightComponent } from './body-section-right/body-section-right.component';
 import { BodySectionMiddleComponent } from './body-section-middle/body-section-middle.component';
+import { AccessBoxComponent } from './access-box/access-box.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
+const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: BodySectionMiddleComponent },
+  {path: 'login', component: LoginComponent },
+  {path: 'register', component: RegistrationComponent },
+  {path: '**', redirectTo: 'home'}
+];
 
 @NgModule({
   declarations: [
@@ -22,10 +32,13 @@ import { BodySectionMiddleComponent } from './body-section-middle/body-section-m
     BodyComponent,
     BodySectionLeftComponent,
     BodySectionRightComponent,
-    BodySectionMiddleComponent
+    BodySectionMiddleComponent,
+    AccessBoxComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgxPaginationModule
+    BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

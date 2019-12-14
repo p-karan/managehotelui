@@ -1,0 +1,32 @@
+.access-container {
+  position: relative;
+  display: inline-block;
+  border-radius:30px;
+  /*background: transparent;*/
+}
+
+/*.btn{
+  width: 55px;
+  height: 55px;
+  border:3px solid #fb2525;
+  position: relative;
+  border-radius:50px;
+  bottom:-40%;
+  left:40%;
+  color:#fb2525;
+  background-color:white;
+  margin:20px 10px;
+  text-decoration:none;
+  display:inline-block;
+  cursor:pointer;
+  transition: all 0.3s;
+}*/
+
+.avatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  left: 30px;
+  top:-15px
+}

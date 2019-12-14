@@ -9,8 +9,8 @@
   width: 100%;
   height: 15%;
   background-color: darkgrey;
-  display: block;
-  /*flex-direction: column;*/
+  display: flex;
+  flex-direction: column;
 }
 
 .app-body-css{
@@ -19,8 +19,8 @@
   width: 100%;
   height: 75%;
   background-color: antiquewhite;
-  display: block;
-  /*flex-direction: column;*/
+  display: flex;
+  flex-direction: column;
 }
 
 .app-footer-css{
@@ -29,7 +29,42 @@
   width: 100%;
   height: 10%;
   background-color: brown;
-  display: block;
-  /*flex-direction: column;*/
+  display: flex;
+  flex-direction: column;
 }
 
+/*BODY COMPONENT CSS*/
+.app-body-section-css{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.app-body-section-left-css{
+  /*min-width: 10vmin;*/
+  min-height: 75vh;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+}
+
+.app-body-section-middle-css{
+  /*min-width: 70vmin;*/
+  min-height: 75vh;
+  width: 75%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  background-color: chartreuse;
+}
+
+.app-body-section-right-css{
+  /*min-width: 20vmin;*/
+  min-height: 75vh;
+  width: 10%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
