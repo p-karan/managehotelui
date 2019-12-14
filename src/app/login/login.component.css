@@ -84,11 +84,11 @@ h3{
 
 .label {
   float:left;
-  margin: -5px 0px;
+  margin: -5px 0;
 }
 
 .loginbox input[type="checkbox"]{
-  margin: -5px 0px;
+  margin: -5px 0;
   width: 25px;
 }
 
@@ -109,4 +109,10 @@ h3{
 
 .loginbox a:hover{
   color: #ffc107;
+}
+
+.login-status-message{
+  color: #fb2525;
+  text-align: center;
+  padding-top: 20px;
 }

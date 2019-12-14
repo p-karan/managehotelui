@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       this.route.navigate(['/home']);
       console.log('Status:' + this.loginStatus);
     } else {
-      this.loginStatus = 'Invalid user';
+      this.loginStatus = 'Invalid Credentials ! Try Again';
       console.log('Status:' + this.loginStatus);
       this.route.navigate(['/login']);
     }
