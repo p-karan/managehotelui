@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchComponent } from './search/search.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { ManagehotelComponent } from './managehotel/managehotel.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -39,7 +40,8 @@ const routes: Routes = [
     LoginComponent,
     RegistrationComponent,
     SearchComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    ManagehotelComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule
