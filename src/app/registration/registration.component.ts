@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {User} from "../user";
-import {Router} from "@angular/router";
-import {UserService} from "../user.service";
-import {Addresses} from "../addresses";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {User} from '../user';
+import {Router} from '@angular/router';
+import {UserService} from '../user.service';
+import {Addresses} from '../addresses';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -48,12 +48,11 @@ export class RegistrationComponent implements OnInit {
           }
         )
       }
-    )
-
+    );
   }
 
   onSubmit() {
-    console.log("Before");
+    console.log('Before');
     console.log(this.registrationForm.value);
 
     this.service.registerUser(this.registrationForm.value).subscribe(data => console.log(data));

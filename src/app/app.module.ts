@@ -24,6 +24,7 @@ const routes: Routes = [
   {path: 'home', component: BodySectionMiddleComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegistrationComponent },
+  {path: 'managehotel', component: ManagehotelComponent },
   {path: '**', redirectTo: 'home'}
 ];
 
