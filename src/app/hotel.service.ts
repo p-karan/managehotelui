@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Hotel} from './hotel';
+import {User} from './user';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelService {
-
   baseURL = 'http://localhost:7575/hotel';
   constructor(private client: HttpClient) { }
 
+  addHotel(newHotel: Hotel): Observable<Hotel> {
+    return this.client.post<Hotel>(this.baseURL, newHotel);
+  }
   findAll(): Observable<Hotel[]> {
     return this.client.get<Hotel[]>(this.baseURL);
   }

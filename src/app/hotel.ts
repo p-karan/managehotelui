@@ -1,9 +1,9 @@
-import {Addresses} from "./addresses";
+import {Addresses} from './addresses';
 
 export interface Hotel {
   hotelId: number;
   hotelName: string;
-  address: Addresses;
+  addresses: Addresses;
   rating: number;
   hotelDescription: string;
   discount: number;
