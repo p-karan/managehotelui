@@ -15,6 +15,8 @@ export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   searchResultList: Searchresult[];
   City = ['Mumbai', 'Delhi', 'Chennai', 'Kolkata'];
+  RoomType = ['ECONOMY', 'DELUXE', 'SUITE'];
+  srchString = '';
   constructor(private fb: FormBuilder, private route: Router,
               private searchservice: SearchresultService, private sessionservice: SessionService) {
   }

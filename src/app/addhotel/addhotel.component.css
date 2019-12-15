@@ -1,4 +1,4 @@
-.managehotel{
+.addhotel{
   width: 1000px;
   height: 475px;
   background: #000;
@@ -14,7 +14,7 @@
   overflow:hidden;
 }
 
-.managehotel_add_container{
+.addhotel_add_container{
   /*overflow-y:scroll;
   position:absolute;*/
   display: flex;
@@ -44,12 +44,12 @@
 
 
 
-.managehotel input{
+.addhotel input{
   width:30%;
   margin-bottom:5px;
 }
 
-.managehotel input[type="text"], input[type="email"], input[type="number"]{
+.addhotel input[type="text"], input[type="email"], input[type="number"]{
   border:none;
   border-bottom:1px solid #fff;
   background: transparent;
@@ -59,7 +59,7 @@
   font-size:14px;
 }
 
-.managehotel input[type="submit"]{
+.addhotel input[type="submit"]{
   border:none;
   background: #fb2525;
   outline:none;
@@ -71,4 +71,40 @@
   position:relative;
 }
 
+.addhotel button{
+  border:none;
+  background: #fb2525;
+  outline:none;
+  height:40px;
+  color: #fff;
+  font-size:18px;
+  border-radius:20px;
+  left:35%;
+  position:relative;
+}
+
+.addhotel button:hover{
+  background: lightblue;
+  cursor:pointer;
+  color:#000;
+}
+
+.addhotel:hover{
+  opacity:1.0;
+}
+.label {
+  float:left;
+  margin: -5px 0;
+}
+
+.addhotel a{
+  text-decoration:none;
+  font-size: 14px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.addhotel a:hover{
+  color: #ffc107;
+}
 
