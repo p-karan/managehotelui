@@ -1,43 +1,41 @@
 <div class="registrationbox">
-  <img src="assets/img/sign_up.jpg" class="img_signUp">
+  <!--<img src="assets/img/sign_up.jpg" class="img_signUp">-->
   <div class="registrationbox_container">
-    <form>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
       <p>Create your credentials</p>
       <div class="frm-cntrl-credential">
-        <input type="text" name="txt_UserName" placeholder="User Name [min 6 chars]" required/>&nbsp;
-        <input type="password" name="txt_Password" placeholder="Enter Password" required/>&nbsp;&nbsp;&nbsp;
+        <input type="text"  formControlName="userName" placeholder="User Name [min 6 chars]" required/>&nbsp;
+        <input type="password"  formControlName="password" placeholder="Enter Password" required/>&nbsp;&nbsp;&nbsp;
         <!--<label>Confirm Password</label>
         <input type="text" name="txt_Confirm_Pwd" placeholder="Confirm Password" required/>-->
       </div>
       <p>Full Name</p>
       <div class="frm-cntrl-full-name">
-        <input type="text" name="txt_FName" placeholder="First Name" required/>
-        <input type="text" name="txt_MName" placeholder="Middle Name (optional)"/>
-        <input type="text" name="txt_LName" placeholder="Last Name" required/>
+        <input type="text" formControlName="firstName" placeholder="First Name" required/>
+        <input type="text" formControlName="middleName" placeholder="Middle Name (optional)"/>
+        <input type="text" formControlName="lastName" placeholder="Last Name" required/>
       </div>
       <p>Address</p>
+      <div formGroupName="addresses">
       <div class="frm-cntrl-address">
-        <input type="text" name="txt_Building" placeholder="Flat/Building" required/>
-        <input type="text" name="txt_Locality" placeholder="Locality" required/>
-        <input type="text" name="txt_Street" placeholder="Street Name" required/>
-        <input type="text" name="txt_City" placeholder="City" required/>
-        <input type="text" name="txt_State" placeholder="State" required/>
-        <input type="text" name="txt_Pincode" placeholder="Pincode" required pattern="[0-9][0-9][0-9][0-9][0-9][0-9]"/>
+        <input type="text" formControlName="addressBldgFlat" placeholder="Flat/Building" />
+        <input type="text" formControlName="addressStreet" placeholder="Street Name" />
+        <input type="text" formControlName="addressCity" placeholder="City" />
+        <input type="text" formControlName="addressState" placeholder="State" />
+        <input type="text" formControlName="addressPincode" placeholder="Pincode" />
       </div>
       <p>Contact Details</p>
       <div class="frm-cntrl-contact">
-        <input type="text" name="txt_MobileNo" placeholder="Mobile No" required
-               pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
-        <input type="text" name="txt_PrimaryPhone" placeholder="Landline 1 (optional)"
-               pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
-        <input type="text" name="txt_SecondayPhone" placeholder="Landline 2 (optional)"
-               pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
-      </div>
-      <p>Email Id</p>
-      <div class="frm-cntrl-email">
-        <input type="email" name="txt_Email" placeholder="Email Id" required/>
+        <input type="text"  formControlName="mobileNo" placeholder="Mobile No"/>
+        <input type="text" formControlName="primaryPhone" placeholder="Landline 1 (optional)"/>
+        <input type="text" formControlName="secondaryPhone" placeholder="Landline 2 (optional)"/>
       </div>
 
+      <p>Email Id</p>
+      <div class="frm-cntrl-email">
+        <input type="email" formControlName="email" placeholder="Email Id"/>
+      </div>
+      </div>
       <div class="btn-submit">
         <input type="Submit" name="btn_Submit" value="Sign Up"/>
       </div>
@@ -48,4 +46,6 @@
       </div>
     </form>
   </div>
+
 </div>
+
