@@ -21,6 +21,7 @@ import { AddhotelComponent } from './addhotel/addhotel.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { UpdatehotelComponent } from './updatehotel/updatehotel.component';
 import { GroupbyPipe } from './groupby.pipe';
+import { RoomComponent } from './room/room.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},

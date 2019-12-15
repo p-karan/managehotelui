@@ -1,4 +1,4 @@
-<table class="table table-striped panel-body">
+<table class="table table-striped table-bordered">
   <tbody>
   <tr>
     <th>Images</th>
@@ -8,7 +8,18 @@
   </tr>
   <tr *ngFor="let eachHotel of hotelList">
     <td>
-      <img class="header-image" src="../../assets/img/Hotel/Trident.jpg">
+      <div *ngIf="eachHotel.hotelName == 'Royal Mumbai LLC'">
+        <img class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg">
+      </div>
+      <div *ngIf="eachHotel.hotelName == 'Taj Mahal LLC'">
+        <img class="header-image" src="../../assets/img/Hotel/Taj.jpg">
+      </div>
+      <div *ngIf="eachHotel.hotelName == 'Trident'">
+        <img class="header-image" src="../../assets/img/Hotel/Trident.jpg">
+      </div>
+      <div *ngIf="eachHotel.hotelName == 'Taj Landmark Mumbai LLC'">
+        <img class="header-image" src="../../assets/img/Hotel/SeaPrinces.jpg">
+      </div>
     </td>
     <td>
       <div>
