@@ -1,0 +1,36 @@
+<table class="table table-striped panel-body">
+  <tbody>
+  <tr>
+    <th>Images</th>
+    <th>Hotel</th>
+    <th>Description</th>
+    <th>Rating</th>
+  </tr>
+  <tr *ngFor="let eachHotel of hotelList">
+    <td>
+      <img class="header-image" src="../../assets/img/Hotel/Trident.jpg">
+    </td>
+    <td>
+      <div>
+        <li><h3>{{eachHotel.hotelName}}</h3></li>
+        <li>{{eachHotel.addresses.addressStreet}}</li>
+        <li>{{eachHotel.addresses.addressCity}}</li>
+        <li>{{eachHotel.addresses.addressState}}</li>
+        <li>{{eachHotel.addresses.mobileNo}}</li>
+        <li>{{eachHotel.addresses.primaryPhone}}</li>
+      </div>
+     </td>
+    <td>{{eachHotel.hotelDescription}}</td>
+    <td>{{eachHotel.rating}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!--
+<td>{{eachHotel.hotelName}}</td>
+<td>{{eachHotel.address.addressCity}}</td>
+<td >
+  <img class="header-image" src="assets/img/Hotel/Taj.jpg">
+  <img class="header-image" src="../../assets/img/Hotel/Trident.jpg">
+</td>
+<td>{{eachHotel.rating}}</td>-->
