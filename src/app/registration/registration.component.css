@@ -46,15 +46,6 @@
   flex-direction: row;
 }
 
-/*.frm-cntrl-password{
-  display: flex;
-  flex-direction: row;
-}*/
-
-/*.frm-cntrl-cnfpassword{
-  display: flex;
-  flex-direction: row;
-}*/
 
 .registrationbox:hover{
   opacity:1.0;

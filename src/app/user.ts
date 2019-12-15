@@ -1,17 +1,12 @@
+import {Addresses} from "./addresses";
+
 export interface User {
-  userId: number;
+  /*userId: number;*/
   userName: string;
   password: string;
-  fullName: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
   role: string;
-  workLocation: string;
-  addressBldgFlat: string;
-  addressStreet: string;
-  addressCity: string;
-  addressState: string;
-  addressPincode: string;
-  email: string;
-  mobileNo: string;
-  primaryPhone: string;
-  secondaryPhone: string;
+  addresses: Addresses;
 }
