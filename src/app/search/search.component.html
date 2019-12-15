@@ -28,12 +28,140 @@
           </td>-->
           </ng-container>
           <td>
-            <input type="Submit" name="btn_Submit" value="Search"/>
+            <!--<input (click)="fetch()" type="Submit" name="btn_Submit" value="Search"/>-->
+            <button (click)="onSubmit()">Search</button>
             <!--<button (click)="fetch""Search"/>-->
           </td>
         </tr>
         </tbody>
       </table>
+    <hr/>
+    <table class="table table-bordered">
+      <tr *ngFor="let eachResult of searchResultList">
+        <td>
+          <div>
+            Hotel Name:
+        {{eachResult.hotelName}}
+          </div>
+          <hr/>
+          <div>
+            Address :
+        {{eachResult.addressBldgFlat}}
+        {{eachResult.addressStreet}}
+        {{eachResult.addressCity}}
+        {{eachResult.addressState}}
+        {{eachResult.addressPincode}}
+          </div>
+          <hr/>
+          <div>
+            Rating:
+            {{eachResult.hotelRating}}
+          </div>
+        </td>
+
+        <td>
+          Description:
+          {{eachResult.roomDescription}}
+        </td>
+        <td>
+          Room Tarriff:
+          {{eachResult.ratePerNight}}
+        {{eachResult.addressBldgFlat}}
+        {{eachResult.addressStreet}}
+        {{eachResult.addressCity}}
+        {{eachResult.addressState}}
+        {{eachResult.addressPincode}}
+        {{eachResult.email}}
+        {{eachResult.mobileNo}}
+        {{eachResult.primaryPhone}}
+        {{eachResult.secondaryPhone}}
+        </td>
+        <td>{{eachResult.hotelName}}</td>
+        <td>{{eachResult.hotelDescription}}</td>
+        <td>{{eachResult.hotelRating}}</td>
+        <td>{{eachResult.discount}}</td>
+        <td>{{eachResult.hotelOperationalStatus}}</td>
+        <td>{{eachResult.addressBldgFlat}}</td>
+        <td>{{eachResult.addressStreet}}</td>
+        <td>{{eachResult.addressCity}}</td>
+        <td>{{eachResult.addressState}}</td>
+        <td>{{eachResult.addressPincode}}</td>
+        <td>{{eachResult.email}}</td>
+        <td>{{eachResult.mobileNo}}</td>
+      </tr>
+    </table>
+    <!--<table class="table table-striped">
+      <tr>
+        <th>Room Id</th>
+        <th>Room Type</th>
+        <th>Room Description</th>
+        <th>Rate Per Night</th>
+        <th>Hotel Id</th>
+        <th>Hotel Name</th>
+        <th>Hotel Description</th>
+        <th>Hotel Rating</th>
+        <th>Discount</th>
+        <th>Hotel Status</th>
+        <th>Address BldgFlat</th>
+        <th>Address Street</th>
+        <th>Address City</th>
+        <th>Address State</th>
+        <th>Address Pincode</th>
+        <th>Emailmail</th>
+        <th>Mobile No</th>
+        <th>Primary Phone</th>
+        <th>Secondary Phone</th>
+      </tr>
+      <tr *ngFor="let eachResult of searchResultList">
+        <td>{{eachResult.roomId}}</td>
+        <td>{{eachResult.roomType}}</td>
+        <td>{{eachResult.roomDescription}}</td>
+        <td>{{eachResult.ratePerNight}}</td>
+        <td>{{eachResult.hotelId}}</td>
+        <td>{{eachResult.hotelName}}</td>
+        <td>{{eachResult.hotelDescription}}</td>
+        <td>{{eachResult.hotelRating}}</td>
+        <td>{{eachResult.discount}}</td>
+        <td>{{eachResult.hotelOperationalStatus}}</td>
+        <td>{{eachResult.addressBldgFlat}}</td>
+        <td>{{eachResult.addressStreet}}</td>
+        <td>{{eachResult.addressCity}}</td>
+        <td>{{eachResult.addressState}}</td>
+        <td>{{eachResult.addressPincode}}</td>
+        <td>{{eachResult.email}}</td>
+        <td>{{eachResult.mobileNo}}</td>
+        <td>{{eachResult.primaryPhone}}</td>
+        <td>{{eachResult.secondaryPhone}}</td>
+      </tr>
+    </table>-->
+
 
   </form>
 </div>
+<!--
+<div>
+  <table class="table table-striped">
+    <tr>
+      <td>Search Result</td>
+&lt;!&ndash;      <td><input [(ngModel)]="srchString"></td>&ndash;&gt;
+    </tr>
+    <tr>
+      <th>Loan Id</th>
+      <th>Loan Type</th>
+      <th>Open Date</th>
+      <th>Closing Date</th>
+      <th>Loan Amount</th>
+    </tr>
+    &lt;!&ndash;<tr *ngFor="let eachHotel of searchResultList | filter: 'loanType': srchString | paginate: {itemsPerPage:2, currentPage:p}">
+      <td>{{eachResult.loanId}}</td>
+      <td>{{eachResult.loanType}}</td>
+      <td>{{eachResult.openDate | date: 'medium'}}</td>
+      <td>{{eachResult.closingDate | date: 'short'}}</td>
+      <td>{{eachResult.loanAmount | currency: 'INR'}}</td>
+      <td><button (click)="edit(eachResult)" class="btb btn-info fa fa-edit"></button></td>
+    </tr>&ndash;&gt;
+  </table>
+  <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+</div>
+-->

@@ -13,7 +13,7 @@ import {SearchresultService} from '../searchresult.service';
 })
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;
- /* searchResult: Searchresult[];*/
+  searchResultList: Searchresult[];
   City = ['Mumbai', 'Delhi', 'Chennai', 'Kolkata'];
   constructor(private fb: FormBuilder, private route: Router,
               private searchservice: SearchresultService, private sessionservice: SessionService) {
@@ -68,7 +68,7 @@ export class SearchComponent implements OnInit {
     console.log('Search Form' + this.searchForm.get('fromDate').value);
     console.log('Search Form' + this.searchForm.get('toDate').value);
     this.searchservice.searchByCityDateRange(this.searchForm.get('city').value,
-      this.searchForm.get('fromDate').value, this.searchForm.get('toDate').value).subscribe(data => console.log(data));
+      this.searchForm.get('fromDate').value, this.searchForm.get('toDate').value).subscribe(data => this.searchResultList = data);
   }
 
 }
