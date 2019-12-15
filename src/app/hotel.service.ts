@@ -23,9 +23,6 @@ export class HotelService {
     return this.client.get<Hotel>(this.baseURL + '/' + id);
   }
 
-  add(addHotel: Hotel): Observable<Hotel> {
-    return this.client.post<Hotel>(this.baseURL, addHotel);
-  }
 
   /*remove(removeHotel: Hotel): Observable<Hotel> {
     const headers = new HttpHeaders().set('content-type' , 'application/json');

@@ -11,8 +11,8 @@ export class SearchresultService {
   baseURL = 'http://localhost:7575/hotel/';
   constructor(private client: HttpClient) { }
 
-  searchByCityDateRange(city: string, fromDate: Date, toDate: Date): Observable<Searchresult> {
-    return this.client.get<Searchresult>(this.baseURL + city + '/' + fromDate + '/' + toDate);
+  searchByCityDateRange(city: string, fromDate: Date, toDate: Date): Observable<Searchresult[]> {
+    return this.client.get<Searchresult[]>(this.baseURL + city + '/' + fromDate + '/' + toDate);
   }
 
 }
