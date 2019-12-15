@@ -1,0 +1,10 @@
+.hotel-image{
+  height: 100px;
+  width: 200px;
+  /* display: block;*/
+  margin: 0 0;
+}
+
+li{
+  list-style: none;
+}
