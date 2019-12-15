@@ -2,7 +2,6 @@
   <!--<img src="assets/img/sign_up.jpg" class="img_signUp">-->
   <div class="managehotel_add_container">
     <form [formGroup]="addHotelForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
-      {{addHotelForm.value|json}}
       <p>Add Hotel Details:</p>
       <div class="frm-cntrl-textDetails">
         <input type="text"  formControlName="hotelName" placeholder="Enter Hotel Name" required/>&nbsp;
