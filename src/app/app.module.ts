@@ -17,16 +17,17 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchComponent } from './search/search.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { ManagehotelComponent } from './managehotel/managehotel.component';
+import { AddhotelComponent } from './addhotel/addhotel.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { UpdatehotelComponent } from './updatehotel/updatehotel.component';
+import { GroupbyPipe } from './groupby.pipe';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: BodySectionMiddleComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegistrationComponent },
-  {path: 'managehotel', component: ManagehotelComponent },
+  {path: 'addhotel', component: AddhotelComponent },
   {path: 'hotel', component: HotelComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: '**', redirectTo: 'home'}
@@ -46,9 +47,10 @@ const routes: Routes = [
     RegistrationComponent,
     SearchComponent,
     MainMenuComponent,
-    ManagehotelComponent,
+    AddhotelComponent,
     HotelComponent,
-    UpdatehotelComponent
+    UpdatehotelComponent,
+    GroupbyPipe
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule

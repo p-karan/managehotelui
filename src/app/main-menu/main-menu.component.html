@@ -1,10 +1,22 @@
-<div class="menu-container">
-  <div class="menu-item-home">Home</div>
-  <div class="menu-item-gallery"><a [routerLink]="['/managehotel']" >Gallery</a></div>
-  <div class="menu-item-hotels">
-    <a [routerLink]="['/hotel']">Hotels</a>
+<div class="navbar">
+  <!--<div class="menu-item-home">Home</div>-->
+  <a [routerLink]="['/home']">Home</a>
+  <a [routerLink]="['/hotel']">Hotels</a>
+  <a [routerLink]="['/room']">Rooms</a>
+  <a [routerLink]="['/gallery']">Gallery</a>
+  <div class="subnav">
+    <button class="subnavbtn">Manage Hotels <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a [routerLink]="['/addhotel']" >Add Hotel</a>
+      <a [routerLink]="['/updatehotel']" >Update Hotel</a>
+    </div>
   </div>
-  <div class="menu-item-rooms">Rooms</div>
-  <div class="menu-item-search"><a [routerLink]="['/updatehotel']" >Update Hotel</a></div>
-  <div class="menu-item-search">Logout</div>
+  <div class="subnav">
+    <button class="subnavbtn">Manage Rooms <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a [routerLink]="['/addhotel']" >Add Hotel</a>
+      <a [routerLink]="['/updatehotel']" >Update Hotel</a>
+    </div>
+  </div>
+  <a [routerLink]="['/generate']">Generate Report</a>
 </div>

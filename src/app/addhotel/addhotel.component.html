@@ -1,8 +1,9 @@
-<div class="managehotel">
+<div class="addhotel">
   <!--<img src="assets/img/sign_up.jpg" class="img_signUp">-->
-  <div class="managehotel_add_container">
+  <div class="addhotel_add_container">
     <form [formGroup]="addHotelForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
-      <p>Add Hotel Details:</p>
+      <p>{{titleText}}</p>
+      <p>Hotel Name</p>
       <div class="frm-cntrl-textDetails">
         <input type="text"  formControlName="hotelName" placeholder="Enter Hotel Name" required/>&nbsp;
       </div>
@@ -21,21 +22,21 @@
           <input type="text" formControlName="primaryPhone" placeholder="Landline 1 (optional)"/>
           <input type="text" formControlName="secondaryPhone" placeholder="Landline 2 (optional)"/>
         </div>
-        <p>Email Id</p>
         <div class="frm-cntrl-email">
           <input type="email" formControlName="email" placeholder="Email Id"/>
         </div>
       </div>
+      <p>Other Details</p>
       <div class="frm-cntrl-textDetails">
         <input type="number"  formControlName="rating" placeholder="Enter Hotel Rating" required/>
         <input type="number"  formControlName="discount" placeholder="Enter Discount percentage (Optional)" />
-        <input type="text"  formControlName="hotelOperationalStatus" placeholder="Enter Hotel Operational status" required/>&nbsp;
+        <input type="text"  formControlName="hotelOperationalStatus" placeholder="Status - OPEN/CLOSE" required/>&nbsp;
       </div>
       <div class="frm-cntrl-textDetails">
         <input type="text"  formControlName="hotelDescription" placeholder="Enter Hotel Description" required/>
       </div>
       <div class="btn-submit">
-        <input type="Submit" name="btn_Submit" value="Add Hotel"/>
+        <button>{{btnText}}</button>
       </div>
 
     </form>

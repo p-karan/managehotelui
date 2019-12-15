@@ -24,14 +24,14 @@ export class HotelService {
   }
 
 
-  remove(removeHotel: Hotel): Observable<Hotel> {
+  removeHotel(removeHotel: Hotel): Observable<Hotel> {
     const headers = new HttpHeaders().set('content-type' , 'application/json');
     // return this.client.request<Hotel>('Delete', this.baseURL, {headers, body: removeHotel}); /!*When deleting by Loan Object*!/
     return this.client.delete<Hotel>(this.baseURL + '/' + removeHotel.hotelId);
   }
-/*
-  update(updateHotel: Hotel): Observable<Hotel> {
+
+  updateHotel(updateHotel: Hotel): Observable<Hotel> {
     return this.client.put<Hotel>(this.baseURL, updateHotel);
   }
-*/
+
 }
