@@ -22,6 +22,9 @@ import { HotelComponent } from './hotel/hotel.component';
 import { UpdatehotelComponent } from './updatehotel/updatehotel.component';
 import { GroupbyPipe } from './groupby.pipe';
 import { RoomComponent } from './room/room.component';
+import { AddroomsComponent } from './addrooms/addrooms.component';
+import { UpdateroomsComponent } from './updaterooms/updaterooms.component';
+import { ManageroomsComponent } from './managerooms/managerooms.component';
 import { FilterPipe } from './filter.pipe';
 
 const routes: Routes = [
@@ -33,6 +36,7 @@ const routes: Routes = [
   {path: 'hotel', component: HotelComponent},
   {path: 'room', component: RoomComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
+  {path: 'addroom', component: AddroomsComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -54,6 +58,9 @@ const routes: Routes = [
     HotelComponent,
     UpdatehotelComponent,
     GroupbyPipe,
+    AddroomsComponent,
+    UpdateroomsComponent,
+    ManageroomsComponent,
     RoomComponent,
     FilterPipe
   ],

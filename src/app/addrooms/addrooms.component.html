@@ -1,0 +1,41 @@
+<div class="addrooms">
+  <div class="addroom-container">
+    <form [formGroup]="addRoomsForm" (ngSubmit)="onSubmit()">
+      <table class = "city-panel">
+        <tr>
+          <td>City</td>
+          <ng-container *ngFor="let eachConfig of formConfigSelect">
+            <td>
+              <select formControlName={{eachConfig.name}}>
+                <option *ngFor="let eachCity of City"
+                        [value]='eachCity'>{{eachCity}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)="fetch()">Fetch Hotels</button>
+            </td>
+          </ng-container>
+        </tr>
+      </table>
+      <table class="hotel-panel">
+        <tbody>
+        <tr>
+          <td>Hotel Name</td>
+          <ng-container *ngFor="let eachConfig of formConfigSelectHotelName">
+            <td>
+              <select formControlName={{eachConfig.name}}>
+                <option *ngFor="let eachHotel of hotelList"
+                        [value]='eachHotel.hotelName'>{{eachHotel.hotelName}}</option>
+              </select>
+            </td>
+          </ng-container>
+        </tr>
+        <!--<tr *ngFor="let eachHotel of hotelList">
+          <td>{{eachHotel.hotelName}}</td>
+          <td><button class="add-room-btn">Add Rooms</button></td>
+        </tr>-->
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
