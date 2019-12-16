@@ -7,8 +7,9 @@ import {Hotel} from './hotel';
 })
 export class DataService {
   private btnText = new BehaviorSubject<string>( 'Add Hotel');
+  private statusMessage = new BehaviorSubject<string>( '');
   private titleText = new BehaviorSubject<string>( 'Add Hotel Details:');
-  private currentStatus = new BehaviorSubject<string>( 'object');
+  private currentStatus = new BehaviorSubject<string>( '');
   private hotelObj = new BehaviorSubject<Hotel>({
   hotelId: 0,
     hotelName: '',
@@ -31,6 +32,7 @@ export class DataService {
   public share = this.hotelObj.asObservable();
   public statusCheckService = this.currentStatus.asObservable();
   public shareButton = this.btnText.asObservable();
+  public shareStatusMessage=this.statusMessage.asObservable();
   public shareTitle = this.titleText.asObservable();
 
   constructor() { }
@@ -45,6 +47,9 @@ export class DataService {
   }
   updateTitle(text) {
     this.titleText.next(text);
+  }
+  updateStatusMessage(text){
+    this.statusMessage.next(text);
   }
   updateStatus(text) {
     this.currentStatus.next(text);

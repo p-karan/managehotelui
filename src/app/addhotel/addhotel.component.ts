@@ -33,25 +33,7 @@ export class AddhotelComponent implements OnInit {
     discount: 0,
     hotelOperationalStatus: ''
   };
-  hotelAfterUpdate: Hotel = {
-    hotelId: 0,
-    hotelName: '',
-    addresses: {
-      addressBldgFlat: '',
-      addressStreet: '',
-      addressCity: '',
-      addressState: '',
-      addressPincode: '',
-      email: '',
-      mobileNo: '',
-      primaryPhone: '',
-      secondaryPhone: '',
-    },
-    rating: 0,
-    hotelDescription: '',
-    discount: 0,
-    hotelOperationalStatus: ''
-  };
+
   btnText = 'Add Hotel';
   titleText = 'Add Hotel Details:';
   statusCheck = '';
@@ -73,14 +55,19 @@ export class AddhotelComponent implements OnInit {
     /*this.hotelShareStatus = this.data.statusCheckService.pipe(takeUntil(this.unsubscribe)).subscribe(receiveStatus => this.statusCheck = receiveStatus);
 */
     this.hotelShareStatus = this.data.statusCheckService.subscribe(receiveStatus => this.statusCheck = receiveStatus);
-    console.log('First login');
-    console.log(this.hotelShareStatus);
+    console.log('First logins');
+    console.log(this.statusCheck);
+    // this.statusCheck = '';
+    // this.statusMessage = '';
+    // this.showErrorLabel = '';
+    // this.showSuccessLabel = '';
     if (this.statusCheck !== '' ) {
       console.log('checking status');
       console.log(this.status);
       console.log('inside status loop');
       /*this.hotelShare = this.data.share.pipe(takeUntil(this.unsubscribe)).subscribe(receiveUpdate => this.hotel = receiveUpdate);*/
       this.hotelShare = this.data.share.subscribe(receiveUpdate => this.hotel = receiveUpdate);
+      this.data.shareStatusMessage.subscribe(updateStatusMessage => this.statusMessage = updateStatusMessage)
         /*      this.active.params.subscribe(params => {
                 this.hotel = params;
                 console.log('inside params');
@@ -89,6 +76,7 @@ export class AddhotelComponent implements OnInit {
         /*this.hotelShareButton = this.data.shareButton.pipe(takeUntil(this.unsubscribe)).subscribe(updateButton => this.btnText = updateButton);
         this.hotelShareTitle = this.data.shareTitle.pipe(takeUntil(this.unsubscribe)).subscribe(updateTitle => this.titleText = updateTitle);*/
       this.hotelShareButton = this.data.shareButton.subscribe(updateButton => this.btnText = updateButton);
+      //this.statusMessage
       this.hotelShareTitle = this.data.shareTitle.subscribe(updateTitle => this.titleText = updateTitle);
     }
     console.log('inside onInit');
@@ -166,6 +154,8 @@ export class AddhotelComponent implements OnInit {
     this.hotelShareButton.unsubscribe();
     this.hotelShareTitle.unsubscribe();
   }*/
+
+
   onSubmit() {
     console.log('Before');
     console.log(this.addHotelForm.value);
@@ -180,6 +170,7 @@ export class AddhotelComponent implements OnInit {
       console.log('Record updated successfully');*/
       this.service.updateHotel(this.addHotelForm.value).subscribe(data => this.getMessage(data));
       this.addHotelForm.reset();
+
 
       /*this.data.share.subscribe(data => this.hotelAfterUpdate = data);*/
       /*this.ngOnDestroy();*/

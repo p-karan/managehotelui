@@ -31,6 +31,8 @@
           </ng-container>
         </tr>
       </table>
+    </form>
+  </div>
       <!--<table class="hotel-panel">
         <tbody>
         <tr>
@@ -50,6 +52,40 @@
         </tr>&ndash;&gt;
         </tbody>
       </table>-->
-    </form>
-  </div>
+  <!--<div class="addhotel">
+    &lt;!&ndash;<img src="assets/img/sign_up.jpg" class="img_signUp">&ndash;&gt;
+    <div class="addhotel_add_container">
+
+      <form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
+        <h3>{{statusMessage}}</h3>
+        <p>{{titleText}}</p>
+
+        <div class="frm-cntrl-textDetails">
+          <label>Hotel Name:</label>
+          <input type="text"  formControlName="hotelName" value="{{eachHotel.hotelName}}" [readOnly] = true >
+        </div>
+        <p>Room Details</p>
+        <div class="frm-cntrl-textDetails">
+          <label>Enter Rate Per Night:</label>
+          <input type="number"  formControlName="ratePerNight" placeholder="Enter Rate Per Night" required/>
+        </div>
+        <div class="frm-cntrl-textDetails">
+          <label>Enter Room Number:</label>
+          <input type="number"  formControlName="roomNo" placeholder="Enter Discount percentage (Optional)" />
+        </div>
+        <div class="frm-cntrl-textDetails">
+          <label>Enter Room Type:</label>
+          <input type="text"  formControlName="roomType" placeholder="ECONOMY/DELUXE/SUITE" required/>&nbsp;
+        </div>
+        <div class="frm-cntrl-textDetails">
+          <label>Enter Room Description:</label>
+          <textarea  formControlName="roomDescription" placeholder="Enter Room Description"  cols="50" rows="5" required></textarea>
+        </div>
+        <div class="btn-submit">
+          <button>{{btnText}}</button>
+        </div>
+
+      </form>
+    </div>
+-->
 </div>

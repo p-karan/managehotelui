@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import {HotelService} from "../hotel.service";
 import {Hotel} from "../hotel";
 import {Addresses} from "../addresses";

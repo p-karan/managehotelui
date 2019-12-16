@@ -43,6 +43,7 @@ export class UpdatehotelComponent implements OnInit {
   delete(obj) {
     const idxPos = this.hotelList.indexOf(obj);
     this.service.removeHotel(obj).subscribe(data => this.hotelList.splice(idxPos, 1));
+    this.service.findAll().subscribe(data => this.hotelList = data);
   }
 /*    {
       this.hotelList.splice(idxPos, 1);
@@ -58,7 +59,6 @@ export class UpdatehotelComponent implements OnInit {
     this.data.updateButton('Update Hotel');
     this.data.updateTitle('Update Hotel Details:');
     this.data.updateStatus('Object');
-
   }
 /*  getMessage = (message: Hotel) => {
     console.log('Inside get Message');
