@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HotelService} from "../hotel.service";
 import {Hotel} from "../hotel";
+import {Addresses} from "../addresses";
 
 @Component({
   selector: 'app-addrooms',
@@ -11,9 +12,11 @@ import {Hotel} from "../hotel";
 })
 export class AddroomsComponent implements OnInit {
 
-  addRoomsForm: FormGroup;
+  searchHotelForm: FormGroup;
+  addRoomForm: FormGroup;
   City = ['Mumbai', 'Delhi', 'Chennai', 'Kolkata'];
   hotelList: Hotel[];
+
   constructor(private fb: FormBuilder, private route: Router, private hotelService: HotelService) { }
 
   formConfigSelect: any[] = [
@@ -32,8 +35,16 @@ export class AddroomsComponent implements OnInit {
     }
   ];
 
+  formConfigRoom: any[] = [
+    {
+      name: 'city', type: 'text', placeholder: 'Select City',
+      errorMsg: 'Select City before proceeding.',
+      constraint: [Validators.required]
+    }
+  ];
+
   ngOnInit() {
-      this.addRoomsForm = this.createForm();
+      this.searchHotelForm = this.createForm();
   }
 
   createForm(): FormGroup {
@@ -61,6 +72,10 @@ export class AddroomsComponent implements OnInit {
 
   fetch(){
     this.hotelService.findAll().subscribe(data => this.hotelList = data);
-    console.log(this.hotelList)
+    console.log(this.hotelList);
+  }
+
+  addRoom(){
+    this.addRoomForm = this.createForm();
   }
 }

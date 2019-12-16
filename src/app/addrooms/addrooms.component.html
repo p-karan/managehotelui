@@ -1,6 +1,6 @@
 <div class="addrooms">
   <div class="addroom-container">
-    <form [formGroup]="addRoomsForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="searchHotelForm" (ngSubmit)="onSubmit()">
       <table class = "city-panel">
         <tr>
           <td>City</td>
@@ -10,14 +10,28 @@
                 <option *ngFor="let eachCity of City"
                         [value]='eachCity'>{{eachCity}}</option>
               </select>
+              <!--<span *ngIf="searchHotelForm.get(eachConfig.name).hasError('required')
+  && searchHotelForm.get(eachConfig.name).touched" class="text-danger">{{eachConfig.errorMsg}}</span>-->
             </td>
             <td>
               <button (click)="fetch()">Fetch Hotels</button>
             </td>
           </ng-container>
+          <td>Hotel Name</td>
+          <ng-container *ngFor="let eachConfig of formConfigSelectHotelName">
+            <td>
+              <select formControlName={{eachConfig.name}}>
+                <option *ngFor="let eachHotel of hotelList"
+                        [value]='eachHotel.hotelName'>{{eachHotel.hotelName}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)="addRoom()">Add Rooms</button>
+            </td>
+          </ng-container>
         </tr>
       </table>
-      <table class="hotel-panel">
+      <!--<table class="hotel-panel">
         <tbody>
         <tr>
           <td>Hotel Name</td>
@@ -30,12 +44,12 @@
             </td>
           </ng-container>
         </tr>
-        <!--<tr *ngFor="let eachHotel of hotelList">
+        &lt;!&ndash;<tr *ngFor="let eachHotel of hotelList">
           <td>{{eachHotel.hotelName}}</td>
           <td><button class="add-room-btn">Add Rooms</button></td>
-        </tr>-->
+        </tr>&ndash;&gt;
         </tbody>
-      </table>
+      </table>-->
     </form>
   </div>
 </div>
