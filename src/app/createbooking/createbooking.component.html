@@ -1,9 +1,39 @@
-<div class="addhotel">
-  <!--<img src="assets/img/sign_up.jpg" class="img_signUp">-->
-  <div class="addhotel_add_container">
+<div class="createbooking">
+  <div class="createbooking_add_container">
+    <form [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
+      <p>{{titleBookingText}}</p>
+      <p>Booking Details</p>
+      <div>
+        <!--<input type="date" [(ngModel)]="bookedFrom" formControlName="bookedFromDate">-->
+        <input type="date" formControlName="bookedFromDate">
+        <input type="date" formControlName="bookedToDate">
+        <input type="text" formControlName="daysBooked" [readOnly]=true>
+        <!--<span>Difference: {{ dateFrom | amDifference : dateTo : 'days' }} days</span>-->
 
-    <form [formGroup]="addHotelForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
-      <h3>{{statusMessage}}</h3>
+      </div>
+      <div>
+        <input type="number" formControlName="noOfAdults">
+        <input type="number" formControlName="noOfChildren">
+        <input type="number" formControlName="bookingAmount" [readOnly]=true>
+      </div>
+      <div>
+        <input type="text" formControlName="bookedBy">
+        <input type="text" formControlName="bookingStatus" [readOnly]=true>
+      </div>
+
+      <p>{{titlePaymentText}}</p>
+      <div formGroupName="paymentSet">
+       <input type="number" formControlName="payAmount">
+        <input type="text" formControlName="payMode">
+        <input type="date" formControlName="payDate">
+        <input type="text" formControlName="payStatus" [readOnly]=true>
+      </div>
+    </form>
+    <div>
+</div>
+
+
+   <!-- <form [formGroup]="addHotelForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
       <p>{{titleText}}</p>
       <p>Hotel Name</p>
       <div class="frm-cntrl-textDetails">
@@ -39,10 +69,4 @@
       </div>
       <div class="btn-submit">
         <button>{{btnText}}</button>
-      </div>
-
-    </form>
-  </div>
-</div>
-
-
+      </div>-->
