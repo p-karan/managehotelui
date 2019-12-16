@@ -1,0 +1,108 @@
+.createbooking{
+  width: 1000px;
+  height: 475px;
+  background: #000;
+  color: #fff;
+  top: 53%;
+  left: 52%;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  padding:60px 30px;
+  border-radius:20px;
+  opacity:0.7;
+  overflow:hidden;
+}
+
+.createbooking_add_container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.frm-cntrl-address{
+  display: flex;
+  flex-direction: row;
+}
+
+.frm-cntrl-email{
+  display: flex;
+  flex-direction: row;
+}
+
+.frm-cntrl-contact{
+  display: flex;
+  flex-direction: row;
+}
+
+.frm-cntrl-frm-cntrl-textDetails{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.addhotel input{
+  width:30%;
+  margin-bottom:5px;
+}
+
+.addhotel input[type="text"], input[type="email"], input[type="number"]{
+  border:none;
+  border-bottom:1px solid #fff;
+  background: transparent;
+  outline:none;
+  height:20px;
+  color: #fff;
+  font-size:14px;
+}
+
+.addhotel input[type="submit"]{
+  border:none;
+  background: #fb2525;
+  outline:none;
+  height:40px;
+  color: #fff;
+  font-size:18px;
+  border-radius:20px;
+  left:35%;
+  position:relative;
+}
+
+.addhotel button{
+  border:none;
+  background: #fb2525;
+  outline:none;
+  height:40px;
+  color: #fff;
+  font-size:18px;
+  border-radius:20px;
+  left:35%;
+  position:relative;
+}
+
+.addhotel button:hover{
+  background: lightblue;
+  cursor:pointer;
+  color:#000;
+}
+
+.addhotel:hover{
+  opacity:1.0;
+}
+.label {
+  float:left;
+  margin: -5px 0;
+}
+
+.addhotel a{
+  text-decoration:none;
+  font-size: 14px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.addhotel a:hover{
+  color: #ffc107;
+}
+

@@ -24,7 +24,5 @@ export class RoomComponent implements OnInit {
    /* console.log(this.service.findAllRoom().subscribe(data));*/
   }
 
-  a
-
 
 }
