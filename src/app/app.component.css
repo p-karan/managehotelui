@@ -23,12 +23,17 @@
   flex-direction: column;
 }
 
+.search-panel-image{
+  height: 80%;
+  width: 100%;
+  z-index: 1;
+}
 .app-footer-css{
   /*min-width: 100vmin;
   min-height: 10vmin;*/
   width: 100%;
   height: 10%;
-  background-color: brown;
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
@@ -56,8 +61,13 @@
   max-height: 75%;
   display: flex;
   flex-direction: column;
-  background-color: chartreuse;
+  background-color: grey;
   overflow-y: auto;
+  /*background: url("src/assets/img/content_lobby_04.jpg") no-repeat center fixed;*/
+  opacity: 1.0;
+  background-size: cover;
+  /*width: 1024px;*/
+  height: 492px;
 }
 
 .app-body-section-right-css{
@@ -68,4 +78,12 @@
   display: flex;
   flex-direction: column;
   background-color: blue;
+}
+
+.transperent{
+  background: url("src/assets/img/content_lobby_04.jpg") no-repeat center fixed;
+  opacity: 1.0;
+  background-size: cover;
+  width: 1024px;
+  height: 492px;
 }
