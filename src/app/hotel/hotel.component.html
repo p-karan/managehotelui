@@ -9,16 +9,20 @@
   <tr *ngFor="let eachHotel of hotelList">
     <td>
       <div *ngIf="eachHotel.hotelName == 'Royal Mumbai LLC'">
-        <img class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg" alt="Royal Mumbai LLC">
       </div>
       <div *ngIf="eachHotel.hotelName == 'Taj Mahal LLC'">
-        <img class="header-image" src="../../assets/img/Hotel/Taj.jpg">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/Taj.jpg" alt="Taj Mahal LLC">
       </div>
       <div *ngIf="eachHotel.hotelName == 'Trident'">
-        <img class="header-image" src="../../assets/img/Hotel/Trident.jpg">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/Trident.jpg" alt="Trident">
       </div>
       <div *ngIf="eachHotel.hotelName == 'Taj Landmark Mumbai LLC'">
-        <img class="header-image" src="../../assets/img/Hotel/SeaPrinces.jpg">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/SeaPrinces.jpg" alt="Taj Landmark Mumbai LLC">
+      </div>
+      <div *ngIf="(eachHotel.hotelName !== 'Royal Mumbai LLC') && (eachHotel.hotelName !== 'Taj Mahal LLC') &&
+      (eachHotel.hotelName !== 'Trident') && (eachHotel.hotelName !== 'Taj Landmark Mumbai LLC')">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg" alt="Test Image">
       </div>
     </td>
     <td>

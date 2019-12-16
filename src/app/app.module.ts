@@ -25,6 +25,7 @@ import { RoomComponent } from './room/room.component';
 import { AddroomsComponent } from './addrooms/addrooms.component';
 import { UpdateroomsComponent } from './updaterooms/updaterooms.component';
 import { ManageroomsComponent } from './managerooms/managerooms.component';
+import { FilterPipe } from './filter.pipe';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'register', component: RegistrationComponent },
   {path: 'addhotel', component: AddhotelComponent },
   {path: 'hotel', component: HotelComponent},
+  {path: 'room', component: RoomComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: 'addroom', component: AddroomsComponent},
   {path: '**', redirectTo: 'home'}
@@ -58,7 +60,9 @@ const routes: Routes = [
     GroupbyPipe,
     AddroomsComponent,
     UpdateroomsComponent,
-    ManageroomsComponent
+    ManageroomsComponent,
+    RoomComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule
