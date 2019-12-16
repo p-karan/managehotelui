@@ -38,7 +38,7 @@
     <hr/>
     <table class="table table-bordered">
 
-      <tr *ngFor="let eachResult of searchResultList">
+      <tr *ngFor="let eachResult of searchResultList" >
         <td>
           <div class="item_flex-column">
             <p>Hotel Name</p>
@@ -68,6 +68,9 @@
         <td>
           Room Tarriff:
           {{eachResult.ratePerNight}}
+          <br/>
+
+          <button class="btb btn-info">Book</button>
 <!--        {{eachResult.addressBldgFlat}}
         {{eachResult.addressStreet}}
         {{eachResult.addressCity}}
