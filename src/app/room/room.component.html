@@ -1,1 +1,37 @@
-<p>room works!</p>
+<table class="table table-striped table-bordered">
+  <tbody>
+  <tr>
+    <th>Filter</th>
+    <th>Room Type </th>
+    <th>City </th>
+    <th>Rate Per Night </th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Search By</td>
+    <td><input size="10" [(ngModel)]="srchRoomType"> </td>
+    <td><input size="10" [(ngModel)]="srchCity"></td>
+  </tr>
+<!--  {{roomList|json}}-->
+  <tr *ngFor="let eachRoom of roomList | filter: 'roomType' : srchRoomType | filter: 'addressCity' : srchCity" >
+    <td class="image">
+      <div *ngIf="eachRoom.roomType == 'ECONOMY'">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Rooms/ECONOMY.jpg" alt="ECONOMY">
+      </div>
+      <div *ngIf="eachRoom.roomType == 'DELUXE'">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Rooms/DELUXE.jpg" alt="DELUXE">
+      </div>
+      <div *ngIf="eachRoom.roomType == 'SUITE'">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Rooms/SUITE.jpg" alt="SUITE">
+      </div>
+      <div *ngIf="(eachRoom.roomType !== 'SUITE') && (eachRoom.roomType !== 'DELUXE') && (eachRoom.roomType !== 'ECONOMY')">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Rooms/TEST.jpg" alt="Test Image">
+      </div>
+    </td>
+    <td>{{eachRoom.roomType}}</td>
+    <td>{{eachRoom.addressCity}}</td>
+    <td>{{eachRoom.ratePerNight}}</td>
+    <td>{{eachRoom.roomDescription}}</td>
+  </tr>
+  </tbody>
+</table>

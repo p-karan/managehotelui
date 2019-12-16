@@ -22,6 +22,7 @@ import { HotelComponent } from './hotel/hotel.component';
 import { UpdatehotelComponent } from './updatehotel/updatehotel.component';
 import { GroupbyPipe } from './groupby.pipe';
 import { RoomComponent } from './room/room.component';
+import { FilterPipe } from './filter.pipe';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'register', component: RegistrationComponent },
   {path: 'addhotel', component: AddhotelComponent },
   {path: 'hotel', component: HotelComponent},
+  {path: 'room', component: RoomComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: '**', redirectTo: 'home'}
 ];
@@ -51,7 +53,9 @@ const routes: Routes = [
     AddhotelComponent,
     HotelComponent,
     UpdatehotelComponent,
-    GroupbyPipe
+    GroupbyPipe,
+    RoomComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule

@@ -8,15 +8,16 @@ import {Room} from './room';
 })
 export class RoomService {
 
-  baseURL = 'http://localhost:7575/rooms/';
+  baseURL = 'http://localhost:7575/room/roomType';
+
   constructor(private client: HttpClient) { }
 
-  findAll(): Observable<Room[]> {
+  findAllRoom(): Observable<Room[]> {
     return this.client.get<Room[]>(this.baseURL);
   }
-  findById(id: string): Observable<Room> {
+ /* findById(id: string): Observable<Room> {
     console.log(this.baseURL + id);
     return this.client.get<Room>(this.baseURL + id);
-  }
+  }*/
 
 }
