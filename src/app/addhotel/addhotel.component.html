@@ -1,7 +1,9 @@
 <div class="addhotel">
   <!--<img src="assets/img/sign_up.jpg" class="img_signUp">-->
   <div class="addhotel_add_container">
+
     <form [formGroup]="addHotelForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
+      <h3>{{statusMessage}}</h3>
       <p>{{titleText}}</p>
       <p>Hotel Name</p>
       <div class="frm-cntrl-textDetails">
