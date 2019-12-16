@@ -3,6 +3,7 @@ import {Room} from '../room';
 import {RoomService} from '../room.service';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-room',
   templateUrl: './room.component.html',
@@ -10,10 +11,20 @@ import {Router} from '@angular/router';
 })
 export class RoomComponent implements OnInit {
 
-  constructor() { }
+  srchCity = '';
+  srchRoomType: '';
+  roomList: Room[];
+
+  constructor(private service: RoomService, private router: Router) { }
 
   ngOnInit() {
+    this.service.findAllRoom().subscribe(data => this.roomList = data);
+    // console.log(this.roomList.forEach());
 
+   /* console.log(this.service.findAllRoom().subscribe(data));*/
   }
+
+  a
+
 
 }
