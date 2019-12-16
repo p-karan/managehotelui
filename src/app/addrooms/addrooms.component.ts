@@ -33,7 +33,7 @@ export class AddroomsComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.addRoomsForm = this.createForm();
+      this.addRoomsForm = this.createForm();
   }
 
   createForm(): FormGroup {
