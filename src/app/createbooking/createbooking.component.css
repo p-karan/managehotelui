@@ -42,22 +42,13 @@
 
 
 
-.addhotel input{
+.addbooking input{
   width:30%;
   margin-bottom:5px;
 }
 
-.addhotel input[type="text"], input[type="email"], input[type="number"]{
-  border:none;
-  border-bottom:1px solid #fff;
-  background: transparent;
-  outline:none;
-  height:20px;
-  color: #fff;
-  font-size:14px;
-}
 
-.addhotel input[type="submit"]{
+.addbooking input[type="submit"]{
   border:none;
   background: #fb2525;
   outline:none;
@@ -69,7 +60,7 @@
   position:relative;
 }
 
-.addhotel button{
+.addbooking button{
   border:none;
   background: #fb2525;
   outline:none;
@@ -81,13 +72,13 @@
   position:relative;
 }
 
-.addhotel button:hover{
+.addbooking button:hover{
   background: lightblue;
   cursor:pointer;
   color:#000;
 }
 
-.addhotel:hover{
+.addbooking:hover{
   opacity:1.0;
 }
 .label {
@@ -95,14 +86,14 @@
   margin: -5px 0;
 }
 
-.addhotel a{
+.addbooking a{
   text-decoration:none;
   font-size: 14px;
   line-height: 20px;
   color: darkgrey;
 }
 
-.addhotel a:hover{
+.addbooking a:hover{
   color: #ffc107;
 }
 
