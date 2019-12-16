@@ -6,16 +6,16 @@
           <td>City</td>
           <ng-container *ngFor="let eachConfig of formConfigSelect">
             <td>
-              <select formControlName={{eachConfig.name}}>
+              <select formControlName={{eachConfig.name}} (change)="fetch($event.target.value)" >
                 <option *ngFor="let eachCity of City"
                         [value]='eachCity'>{{eachCity}}</option>
               </select>
               <!--<span *ngIf="searchHotelForm.get(eachConfig.name).hasError('required')
   && searchHotelForm.get(eachConfig.name).touched" class="text-danger">{{eachConfig.errorMsg}}</span>-->
             </td>
-            <td>
-              <button (click)="fetch()">Fetch Hotels</button>
-            </td>
+           <!-- <td>
+              <button (click)="fetch(eachConfig.name)">Fetch Hotels</button>
+            </td>-->
           </ng-container>
           <td>Hotel Name</td>
           <ng-container *ngFor="let eachConfig of formConfigSelectHotelName">
