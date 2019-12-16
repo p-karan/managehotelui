@@ -26,13 +26,14 @@ import { AddroomsComponent } from './addrooms/addrooms.component';
 import { UpdateroomsComponent } from './updaterooms/updaterooms.component';
 import { ManageroomsComponent } from './managerooms/managerooms.component';
 import { FilterPipe } from './filter.pipe';
+import {AuthguardService} from "./authguard.service";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: BodySectionMiddleComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegistrationComponent },
-  {path: 'addhotel', component: AddhotelComponent },
+  {path: 'addhotel', component: AddhotelComponent/*, canActivate: [AuthguardService]*/},
   {path: 'hotel', component: HotelComponent},
   {path: 'room', component: RoomComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},

@@ -103,8 +103,7 @@ export class AddhotelComponent implements OnInit {
       this.service.updateHotel(this.addHotelForm.value).subscribe(data => console.log(data));
       console.log('Record updated successfully');
     }
-
-
+    this.addHotelForm.reset();
   }
 
 }

@@ -73,4 +73,6 @@ export class SearchComponent implements OnInit {
       this.searchForm.get('fromDate').value, this.searchForm.get('toDate').value).subscribe(data => this.searchResultList = data);
   }
 
+  book(obj){}
+
 }
