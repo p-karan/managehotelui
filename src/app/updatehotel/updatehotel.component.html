@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <tbody>
+  <tr>
+    <th>Hotel Name</th>
+    <th>Hotel Location</th>
+    <th>Operational Status</th>
+    <th colspan=2>Update Actions</th>
+  </tr>
+  <tr *ngFor="let eachHotel of hotelList">
+    <td>{{eachHotel.hotelName}}</td>
+    <td>{{eachHotel.addresses.addressCity}}</td>
+    <td>{{eachHotel.hotelOperationalStatus}}</td>
+    <td><button (click)="edit(eachHotel)" class="btn btn-info fa fa-edit"></button></td>
+    <td><button (click)="delete(eachHotel)" class="btn btn-danger fa fa-remove"></button></td>
+  </tr>
+  </tbody>
+</table>
