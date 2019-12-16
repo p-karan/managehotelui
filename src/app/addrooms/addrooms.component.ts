@@ -102,7 +102,7 @@ export class AddroomsComponent implements OnInit {
 
   fetch(event) {
     this.hotelService.findAllByCity(event).subscribe(data => this.hotelList = data);
-    console.log(this.hotelList.);
+    console.log(this.hotelList);
   }
 
   addRoom() {
