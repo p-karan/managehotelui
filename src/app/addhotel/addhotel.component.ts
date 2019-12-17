@@ -182,8 +182,7 @@ export class AddhotelComponent implements OnInit {
       console.log('Record updated successfully');
       /*this.router.navigate(['/updatehotel']);*/
     }
-
-
+    this.addHotelForm.reset();
   }
 
 }
