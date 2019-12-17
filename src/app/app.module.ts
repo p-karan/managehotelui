@@ -43,6 +43,7 @@ const routes: Routes = [
   {path: 'booking', component: CreatebookingComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: 'addroom', component: AddroomsComponent},
+  {path: 'logout', component: LogoutComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
