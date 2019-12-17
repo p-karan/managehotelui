@@ -27,6 +27,8 @@ import { UpdateroomsComponent } from './updaterooms/updaterooms.component';
 import { ManageroomsComponent } from './managerooms/managerooms.component';
 import { FilterPipe } from './filter.pipe';
 import { CreatebookingComponent } from './createbooking/createbooking.component';
+import { LogoutComponent } from './logout/logout.component';
+import { CustomDirective } from './custom.directive';
 import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
@@ -67,6 +69,9 @@ const routes: Routes = [
     ManageroomsComponent,
     RoomComponent,
     FilterPipe,
+    CreatebookingComponent,
+    LogoutComponent,
+    CustomDirective,
     CreatebookingComponent,
     ReportsComponent
   ],

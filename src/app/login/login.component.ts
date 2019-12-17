@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
     if (username === data.userName && password === data.password) {
       this.loginStatus = 'Valid user';
       sessionStorage.setItem('userLogged', data.role);
+      console.log(data.role);
       this.sessionservice.changeLoginStatus('logged');
       this.route.navigate(['/home']);
       console.log('Status:' + this.loginStatus);
