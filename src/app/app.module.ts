@@ -47,6 +47,7 @@ const routes: Routes = [
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: 'addroom', component: AddroomsComponent},
   {path: 'logout', component: LogoutComponent},
+  {path: 'history', component: ShowbookinghistoryComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
