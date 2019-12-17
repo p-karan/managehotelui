@@ -75,7 +75,15 @@ export class CreatebookingComponent implements OnInit {
   }*/
 
   ngOnInit() {
-  this.createBookingForm = new FormGroup({
+    //Check to see if user is logged in
+    const loggedStatus = sessionStorage.getItem('userLogged');
+    if (loggedStatus == null) {
+      this.router.navigate(['/login']);
+    }
+    //Need to add logic to get data from search list to here
+    //this.service.findAll().subscribe(data => this.customerList = data);
+
+    this.createBookingForm = new FormGroup({
     bookingId: new FormControl(this.booking.bookingId),
     bookedFromDate: new FormControl(this.booking.bookedFromDate, Validators.required),
     bookedToDate: new FormControl(this.booking.bookedToDate, [Validators.required]),
