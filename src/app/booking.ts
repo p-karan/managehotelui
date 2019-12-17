@@ -1,4 +1,4 @@
-import {Payment} from "./payment";
+import {Payment} from './payment';
 
 export interface Booking {
 
@@ -9,7 +9,7 @@ export interface Booking {
   checkInDateTime: Date;
   checkOutDateTime: Date;
   bookingAmount: number;
-  noOfAdults:number;
+  noOfAdults: number;
   noOfChildren: number;
   bookedBy: string;
   bookingStatus: string;

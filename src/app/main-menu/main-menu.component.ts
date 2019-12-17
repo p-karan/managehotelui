@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService} from '../data.service';
 import {HotelService} from '../hotel.service';
 import {Router} from '@angular/router';
-import {LoginService} from "../login.service";
-import {Navlink} from "../navlink";
-import {SessionService} from "../session.service";
+import {LoginService} from '../login.service';
+import {Navlink} from '../navlink';
+import {SessionService} from '../session.service';
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
@@ -19,10 +19,10 @@ export class MainMenuComponent implements OnInit {
   ];
   linkAdmin: Navlink [] = [
     {link: 'home', text: 'Home'},
-    {link: 'hotel', text: 'Hotels',title:'test'},
+    {link: 'hotel', text: 'Hotels', title: 'test'},
     {link: 'room', text: 'Rooms'},
     /*{link: 'addhotel', text: 'Add Hotel',action:'click',handler:'getAdd()'},*/
-    {link: 'addhotel', text: 'Add Hotel',title:'addhotel'},
+    {link: 'addhotel', text: 'Add Hotel', title: 'addhotel'},
     {link: 'updatehotel', text: 'Update Hotel'},
     {link: 'addroom', text: 'Add Room'},
     {link: 'updateroom', text: 'Update Room'},
