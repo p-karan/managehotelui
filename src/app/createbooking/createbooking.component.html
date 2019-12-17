@@ -1,78 +1,48 @@
-<div class="createbooking">
-  <div class="createbooking_add_container">
-    <form [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
-      <p>{{titleBookingText}}</p>
-      <p>Booking From & To Date</p>
-      <div class="frm-cntrl-textDetails">
-        <!--<input type="date" [(ngModel)]="bookedFrom" formControlName="bookedFromDate">-->
-        <input type="date" formControlName="bookedFromDate">
-        <input type="date" formControlName="bookedToDate">
-        <input type="text" formControlName="daysBooked" [readOnly]=true>
-      <!--  <span *ngIf= {bookedFromDate} | date } ></span>-->
-        <!--<span *ngIf="(loginForm.get(eachConfig.name).hasError('maxlength') || loginForm.get(eachConfig.name).hasError('minlength'))
-      && loginForm.get(eachConfig.name).touched">{{"User name length should be between 3 to 8 character"}}</span>-->
 
-        <!--<span>Difference: {{ dateFrom | amDifference : dateTo : 'days' }} days</span>-->
-      </div>
-      <p>Guest Details</p>
-      <div class="frm-cntrl-textDetails">
-        <input type="number" formControlName="noOfAdults" placeholder="No of Adults">
-        <input type="number" formControlName="noOfChildren" placeholder="No of Children">
-        <input type="number" formControlName="bookingAmount" [readOnly]=true>
-      </div>
-      <p>Booking Status</p>
-      <div class="frm-cntrl-textDetails">
-        <input type="text" formControlName="bookedBy" placeholder="Booked By">
-        <input type="text" formControlName="bookingStatus" placeholder="Booking Status" [readOnly]=true >
-      </div>
-
-      <p>{{titlePaymentText}}</p>
-      <div formGroupName="paymentSet">
-        <div class="frm-cntrl-textDetails">
-        <input type="text" formControlName="payMode" placeholder="Select Mode">
-        <input type="date" formControlName="payDate">
-        <input type="text" formControlName="payStatus" placeholder="Payment Status" [readOnly]=true>
-      </div>
-      </div>
-    </form>
+<div>
+  <form [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
+    <p>{{titleBookingText}}</p>
     <div>
+      <label>Booked From Date:</label>
+      <input type="date" formControlName="bookedFromDate" disabled="true">
+    </div>
+    <div>
+      <label>Booked To Date:</label>
+      <input type="date" formControlName="bookedToDate" disabled="true">
+    </div>
+    <div>
+      <label>No Of Days Booked:</label>
+      <input type="number" formControlName="daysBooked" disabled="true">
+    </div>
+    <div>
+      <label>No Of Adults:</label>
+      <input type="number" formControlName="noOfAdults" placeholder="No of Adults">
+    </div>
+    <div>
+      <label>No Of Children:</label>
+      <input type="number" formControlName="noOfChildren" placeholder="No of Children">
+    </div>
+    <div>
+      <label>Booked By:</label>
+      <input type="text" formControlName="bookedBy" placeholder="Booked By">
+    </div>
+
+    <p>{{titlePaymentText}}</p>
+    <div>
+      <label>Payment Amount:</label>
+      <input type="number" formControlName="bookingAmount">
+    </div>
+<!--    <div formGroupName="paymentSet">
+      <label>Payment Mode:</label>
+      <input type="text" formControlName="payMode" placeholder="Select Mode">
+    </div>-->
+    <div formGroupName="paymentSet">
+      <label>Payment Date:</label>
+      <input type="date" formControlName="payDate">
+    </div>
+<!--    <div formGroupName="paymentSet">
+      <label>Payment Status:</label>
+      <input type="text" formControlName="payStatus" placeholder="Payment Status" [readOnly]=true>
+    </div>-->
+  </form>
 </div>
-
-
-   <!-- <form [formGroup]="addHotelForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
-      <p>{{titleText}}</p>
-      <p>Hotel Name</p>
-      <div class="frm-cntrl-textDetails">
-        <input type="text"  formControlName="hotelName" placeholder="Enter Hotel Name" required/>&nbsp;
-      </div>
-      <p>Hotel Address</p>
-      <div formGroupName="addresses">
-        <div class="frm-cntrl-address">
-          <input type="text" formControlName="addressBldgFlat" placeholder="Flat/Building" />
-          <input type="text" formControlName="addressStreet" placeholder="Street Name" />
-          <input type="text" formControlName="addressCity" placeholder="City" />
-          <input type="text" formControlName="addressState" placeholder="State" />
-          <input type="text" formControlName="addressPincode" placeholder="Pincode" />
-        </div>
-        <p>Contact Details</p>
-        <div class="frm-cntrl-contact">
-          <input type="text"  formControlName="mobileNo" placeholder="Mobile No"/>
-          <input type="text" formControlName="primaryPhone" placeholder="Landline 1 (optional)"/>
-          <input type="text" formControlName="secondaryPhone" placeholder="Landline 2 (optional)"/>
-        </div>
-        <div class="frm-cntrl-email">
-          <input type="email" formControlName="email" placeholder="Email Id"/>
-        </div>
-      </div>
-      <p>Other Details</p>
-      <div class="frm-cntrl-textDetails">
-        <input type="number"  formControlName="rating" placeholder="Enter Hotel Rating" required/>
-        <input type="number"  formControlName="discount" placeholder="Enter Discount percentage (Optional)" />
-        <input type="text"  formControlName="hotelOperationalStatus" placeholder="Status - OPEN/CLOSE" required/>&nbsp;
-      </div>
-      <div class="frm-cntrl-textDetails">
-        <input type="text"  formControlName="hotelDescription" placeholder="Enter Hotel Description" required/>
-      </div>
-      <div class="btn-submit">
-        <button>{{btnText}}</button>
-      </div>-->

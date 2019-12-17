@@ -5,6 +5,8 @@ import {Router} from '@angular/router';
 import {LoginService} from '../login.service';
 import {SessionService} from '../session.service';
 import {SearchresultService} from '../searchresult.service';
+import {BookingService} from '../booking.service';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-search',
@@ -12,13 +14,37 @@ import {SearchresultService} from '../searchresult.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  idxPos = 0;
   searchForm: FormGroup;
+  fromDate: Date;
+  toDate: Date;
   searchResultList: Searchresult[];
+  searchResultObj: Searchresult = {
+    roomId: 0,
+    roomType: '',
+    ratePerNight: 0,
+    roomDescription: '',
+    hotelId: 0,
+    hotelName: '',
+    hotelDescription: '',
+    hotelRating: 0,
+    discount: 0,
+    hotelOperationalStatus: '',
+    addressBldgFlat: '',
+    addressStreet: '',
+    addressCity: '',
+    addressState: '',
+    addressPincode: '',
+    email: '',
+    mobileNo: '',
+    primaryPhone: '',
+    secondaryPhone: ''
+  };
   City = ['Mumbai', 'Delhi', 'Chennai', 'Kolkata'];
   RoomType = ['ECONOMY', 'DELUXE', 'SUITE'];
   srchString = '';
   constructor(private fb: FormBuilder, private route: Router,
-              private searchservice: SearchresultService, private sessionservice: SessionService) {
+              private searchservice: SearchresultService, private sessionservice: SessionService, private data: DataService) {
   }
 
   formConfig: any[] = [
@@ -69,10 +95,23 @@ export class SearchComponent implements OnInit {
     console.log('Search Form' + this.searchForm.get('city').value);
     console.log('Search Form' + this.searchForm.get('fromDate').value);
     console.log('Search Form' + this.searchForm.get('toDate').value);
+    this.fromDate = this.searchForm.get('fromDate').value;
+    this.toDate = this.searchForm.get('toDate').value;
+    this.data.updateToDate(this.toDate);
+    this.data.updateFromDate(this.fromDate);
     this.searchservice.searchByCityDateRange(this.searchForm.get('city').value,
       this.searchForm.get('fromDate').value, this.searchForm.get('toDate').value).subscribe(data => this.searchResultList = data);
   }
 
-  book(obj){}
+  book(obj) {
+    this.idxPos = this.searchResultList.indexOf(obj);
+    this.searchResultObj = obj;
+    console.log(this.searchResultObj);
+    this.data.updateSearchResult(this.searchResultObj);
+    this.route.navigate(['/booking']);
+/*    this.data.updateButton('Update Hotel');
+    this.data.updateTitle('Update Hotel Details:');
+    this.data.updateStatus('Object');*/
+  }
 
 }

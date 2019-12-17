@@ -3,6 +3,6 @@ export interface Navlink {
   text: string;
   /*action?: string;
   handler?:string;*/
-  title?:string;
+  title?: string;
 
 }
