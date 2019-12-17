@@ -12,6 +12,7 @@ import {SearchresultService} from '../searchresult.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  idxPos = 0;
   searchForm: FormGroup;
   searchResultList: Searchresult[];
   City = ['Mumbai', 'Delhi', 'Chennai', 'Kolkata'];
@@ -72,7 +73,9 @@ export class SearchComponent implements OnInit {
     this.searchservice.searchByCityDateRange(this.searchForm.get('city').value,
       this.searchForm.get('fromDate').value, this.searchForm.get('toDate').value).subscribe(data => this.searchResultList = data);
   }
+  book(obj){
+    this.searchResultList.indexOf(obj);
+  }
 
-  book(obj){}
 
 }

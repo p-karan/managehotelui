@@ -27,6 +27,8 @@ import { UpdateroomsComponent } from './updaterooms/updaterooms.component';
 import { ManageroomsComponent } from './managerooms/managerooms.component';
 import { FilterPipe } from './filter.pipe';
 import { CreatebookingComponent } from './createbooking/createbooking.component';
+import { LogoutComponent } from './logout/logout.component';
+import { CustomDirective } from './custom.directive';
 import { ReportsComponent } from './reports/reports.component';
 import { ReportmenuComponent } from './reportmenu/reportmenu.component';
 import { ReportbydateComponent } from './reportbydate/reportbydate.component';
@@ -46,6 +48,7 @@ const routes: Routes = [
   {path: 'report', component: ReportsComponent},
   {path: 'reportDate', component: ReportbydateComponent},
   {path: 'reportmenu', component: ReportmenuComponent},
+  {path: 'logout', component: LogoutComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -72,6 +75,9 @@ const routes: Routes = [
     ManageroomsComponent,
     RoomComponent,
     FilterPipe,
+    CreatebookingComponent,
+    LogoutComponent,
+    CustomDirective,
     CreatebookingComponent,
     ReportsComponent,
     ReportmenuComponent,
