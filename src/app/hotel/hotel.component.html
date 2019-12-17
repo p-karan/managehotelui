@@ -1,3 +1,4 @@
+<div class="main-container">
 <table class="tbl_chk_availability">
   <tbody>
   <tr>
@@ -6,42 +7,42 @@
     <th class="tbl_chk_availability_hd">Description</th>
     <th class="tbl_chk_availability_hd">Rating</th>
   </tr>
-  <tr *ngFor="let eachHotel of hotelList | paginate: {itemsPerPage: 2, currentPage:p}">
+  <tr *ngFor="let eachHotel of hotelList | paginate: {itemsPerPage: 4, currentPage:p}">
     <td class="tbl_chk_availability_detail">
       <div *ngIf="eachHotel.hotelName == 'Royal Mumbai LLC'">
-        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg" alt="Royal Mumbai LLC">
+        <img height="100" width="200" class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg" alt="Royal Mumbai LLC">
       </div>
       <div *ngIf="eachHotel.hotelName == 'Taj Mahal LLC'">
-        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/Taj.jpg" alt="Taj Mahal LLC">
+        <img height="100" width="200" class="header-image" src="../../assets/img/Hotel/Taj.jpg" alt="Taj Mahal LLC">
       </div>
       <div *ngIf="eachHotel.hotelName == 'Trident'">
-        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/Trident.jpg" alt="Trident">
+        <img height="100" width="200" class="header-image" src="../../assets/img/Hotel/Trident.jpg" alt="Trident">
       </div>
       <div *ngIf="eachHotel.hotelName == 'Taj Landmark Mumbai LLC'">
-        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/SeaPrinces.jpg" alt="Taj Landmark Mumbai LLC">
+        <img height="100" width="200" class="header-image" src="../../assets/img/Hotel/SeaPrinces.jpg" alt="Taj Landmark Mumbai LLC">
       </div>
       <div *ngIf="(eachHotel.hotelName !== 'Royal Mumbai LLC') && (eachHotel.hotelName !== 'Taj Mahal LLC') &&
       (eachHotel.hotelName !== 'Trident') && (eachHotel.hotelName !== 'Taj Landmark Mumbai LLC')">
-        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/Trident.jpg" alt="Test Image">
+        <img height="100" width="200" class="header-image" src="../../assets/img/Hotel/Trident.jpg" alt="Test Image">
       </div>
     </td>
     <td class="tbl_chk_availability_detail">
-      <div>
-        <li><h3>{{eachHotel.hotelName}}</h3></li>
-        <li>{{eachHotel.addresses.addressStreet}}</li>
+      <!--<div>-->
+        <li><h4>{{eachHotel.hotelName}}</h4></li>
+        <!--<li>{{eachHotel.addresses.addressStreet}}</li>-->
         <li>{{eachHotel.addresses.addressCity}}</li>
         <li>{{eachHotel.addresses.addressState}}</li>
         <li>{{eachHotel.addresses.mobileNo}}</li>
-        <li>{{eachHotel.addresses.primaryPhone}}</li>
-      </div>
+        <!--<li>{{eachHotel.addresses.primaryPhone}}</li>-->
+      <!--</div>-->
      </td>
-    <td class="tbl_chk_availability_detail">{{eachHotel.hotelDescription}}</td>
+    <td >{{eachHotel.hotelDescription}}</td>
     <td class="tbl_chk_availability_detail">{{eachHotel.rating}}</td>
   </tr>
   </tbody>
-  <pagination-controls align="center" (pageChange)="p=$event"></pagination-controls>
 </table>
-
+  <pagination-controls align="center" (pageChange)="p=$event"></pagination-controls>
+</div>
 
 <!--
 <td>{{eachHotel.hotelName}}</td>

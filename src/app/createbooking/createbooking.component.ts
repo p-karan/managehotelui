@@ -64,7 +64,7 @@ export class CreatebookingComponent implements OnInit {
     primaryPhone: '',
     secondaryPhone: ''
   };
-  titleBookingText = 'Add Booking Details:';
+  titleBookingText = 'Booking Details:';
   titlePaymentText = 'Add Payment Details:';
   constructor(private service: BookingService, private router: Router, private data: DataService,
               private sessionServices: SessionService) { }
@@ -158,6 +158,7 @@ export class CreatebookingComponent implements OnInit {
     console.log('OnSubmit called from createbooking');
     console.log(this.createBookingForm.value);
     this.service.addBooking(this.createBookingForm.value).subscribe(data => console.log(data));
+    this.router.navigate(['/success']);
   }
 
 

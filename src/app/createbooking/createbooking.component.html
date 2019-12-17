@@ -1,9 +1,6 @@
-
-
-<div>
-  <form [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
-    {{createBookingForm.value|json}}
-    <p>{{titleBookingText}}</p>
+<div class="bookingbox">
+  <h3>{{titleBookingText}}</h3>
+  <form class="form-group" [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
     <div>
       <label>Booked From Date:</label>
       <input type="date" formControlName="bookedFromDate" disabled="true">
@@ -28,10 +25,13 @@
       <label>Booked By:</label>
       <input type="text" formControlName="bookedBy" placeholder="Booked By">
     </div>
-    <p>{{titlePaymentText}}</p>
     <div>
       <label>Payment Amount:</label>
       <input type="number" formControlName="bookingAmount">
+    </div>
+    <div class="span-set">
+      <label>Card Details:</label>
+      <input type="text"  placeholder="Enter Card Details"><input type="text"  placeholder="Enter CVV">
     </div>
 <!--    <div formGroupName="paymentSet">
       <label>Payment Mode:</label>
@@ -46,7 +46,7 @@
       <input type="text" formControlName="payStatus" placeholder="Payment Status" [readOnly]=true>
     </div>-->
     <div>
-      <button>Confirm Booking</button>
+      <button id="button">Confirm Booking</button>
     </div>
   </form>
 </div>

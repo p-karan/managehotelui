@@ -33,6 +33,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { ShowbookinghistoryComponent } from './showbookinghistory/showbookinghistory.component';
 import { ReportmenuComponent } from './reportmenu/reportmenu.component';
 import { ReportbydateComponent } from './reportbydate/reportbydate.component';
+import { SuccessbookingComponent } from './successbooking/successbooking.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -48,6 +49,10 @@ const routes: Routes = [
   {path: 'addroom', component: AddroomsComponent},
   {path: 'logout', component: LogoutComponent},
   {path: 'history', component: ShowbookinghistoryComponent},
+  {path: 'generate', component: ReportmenuComponent},
+  {path: 'reportByDate', component: ReportbydateComponent},
+  {path: 'report', component: ReportsComponent},
+  {path: 'success', component: SuccessbookingComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -81,7 +86,8 @@ const routes: Routes = [
     ReportsComponent,
     ShowbookinghistoryComponent,
     ReportmenuComponent,
-    ReportbydateComponent
+    ReportbydateComponent,
+    SuccessbookingComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule

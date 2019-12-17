@@ -56,6 +56,8 @@ export class RegistrationComponent implements OnInit {
     console.log(this.registrationForm.value);
 
     this.service.registerUser(this.registrationForm.value).subscribe(data => console.log(data));
+    this.registrationForm.reset();
+    this.router.navigate(['/login']);
     /*console.log("Record added successfully");*/
 
 
