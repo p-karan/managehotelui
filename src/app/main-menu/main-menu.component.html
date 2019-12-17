@@ -1,3 +1,4 @@
+<div class="main-container">
 <div class="navbar">
   <!--<div class="menu-item-home">Home</div>-->
   <a [routerLink]="['/home']">Home</a>
@@ -7,7 +8,7 @@
   <div class="subnav">
     <button class="subnavbtn">Manage Hotels <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a [routerLink]="['/addhotel']" >Add Hotel</a>
+      <a [routerLink]="['/addhotel']" (click)="getAdd()">Add Hotel</a>
       <a [routerLink]="['/updatehotel']" >Update Hotel</a>
     </div>
   </div>
@@ -18,5 +19,7 @@
       <a [routerLink]="['/updatehotel']" >Update Hotel</a>
     </div>
   </div>
+  <a [routerLink]="['/booking']">Booking</a>
   <a [routerLink]="['/generate']">Generate Report</a>
+</div>
 </div>

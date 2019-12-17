@@ -32,6 +32,9 @@ export class UpdatehotelComponent implements OnInit {
   discount: 0,
   hotelOperationalStatus: ''
   };
+/*  statusMessage = '';
+  showErrorLabel = '';
+  showSuccessLabel = '';*/
   constructor(private service: HotelService, private data: DataService, private router: Router) { }
 
   ngOnInit() {
@@ -39,9 +42,13 @@ export class UpdatehotelComponent implements OnInit {
   }
   delete(obj) {
     const idxPos = this.hotelList.indexOf(obj);
-    this.service.removeHotel(obj).subscribe(data =>
-      this.hotelList.splice(idxPos, 1));
+    this.service.removeHotel(obj).subscribe(data => this.hotelList.splice(idxPos, 1));
+    this.service.findAll().subscribe(data => this.hotelList = data);
   }
+/*    {
+      this.hotelList.splice(idxPos, 1);
+      this.getMessage(data);
+    });}*/
 
   edit(obj) {
     this.idxPos = this.hotelList.indexOf(obj);
@@ -51,5 +58,21 @@ export class UpdatehotelComponent implements OnInit {
     this.router.navigate(['/addhotel']);
     this.data.updateButton('Update Hotel');
     this.data.updateTitle('Update Hotel Details:');
+    this.data.updateStatus('Object');
   }
+/*  getMessage = (message: Hotel) => {
+    console.log('Inside get Message');
+    console.log(message.hotelId);
+    if (message.hotelId === null) {
+      console.log('Inside get Message IF');
+      this.showErrorLabel = 'inline';
+      this.showSuccessLabel = 'none';
+      this.statusMessage = 'Sorry, action unsuccessful!';
+    } else {
+      console.log('Inside get Message ELSE');
+      this.showErrorLabel = 'none';
+      this.showSuccessLabel = 'inline';
+      this.statusMessage = 'Action successful!';
+    }
+  }*/
 }

@@ -22,6 +22,9 @@ export class HotelService {
     console.log(this.baseURL + '/' + id);
     return this.client.get<Hotel>(this.baseURL + '/' + id);
   }
+  findAllByCity(city: string): Observable<Hotel[]> {
+    return this.client.get<Hotel[]>(this.baseURL + '/' + city);
+  }
 
 
   removeHotel(removeHotel: Hotel): Observable<Hotel> {
