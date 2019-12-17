@@ -18,12 +18,18 @@ export class HotelService {
   findAll(): Observable<Hotel[]> {
     return this.client.get<Hotel[]>(this.baseURL);
   }
+
   findById(id: string): Observable<Hotel> {
     console.log(this.baseURL + '/' + id);
     return this.client.get<Hotel>(this.baseURL + '/' + id);
   }
+
   findAllByCity(city: string): Observable<Hotel[]> {
     return this.client.get<Hotel[]>(this.baseURL + '/' + city);
+  }
+
+  getHotelByNameandCity(city: string, hotelname: string): Observable<Hotel> {
+    return this.client.get<Hotel>(this.baseURL + '/city/Name/' + city + '/' + hotelname )
   }
 
 

@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('userLogged', data.role);
       sessionStorage.setItem('userName', data.userName);
       console.log(data.role);
+      console.log(data.userName);
       this.sessionservice.changeLoginStatus('logged');
       this.route.navigate(['/home']);
       console.log('Status:' + this.loginStatus);

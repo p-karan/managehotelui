@@ -30,6 +30,9 @@ import { CreatebookingComponent } from './createbooking/createbooking.component'
 import { LogoutComponent } from './logout/logout.component';
 import { CustomDirective } from './custom.directive';
 import { ReportsComponent } from './reports/reports.component';
+import { ShowbookinghistoryComponent } from './showbookinghistory/showbookinghistory.component';
+import { ReportmenuComponent } from './reportmenu/reportmenu.component';
+import { ReportbydateComponent } from './reportbydate/reportbydate.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -43,6 +46,8 @@ const routes: Routes = [
   {path: 'booking', component: CreatebookingComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: 'addroom', component: AddroomsComponent},
+  {path: 'logout', component: LogoutComponent},
+  {path: 'history', component: ShowbookinghistoryComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -73,7 +78,10 @@ const routes: Routes = [
     LogoutComponent,
     CustomDirective,
     CreatebookingComponent,
-    ReportsComponent
+    ReportsComponent,
+    ShowbookinghistoryComponent,
+    ReportmenuComponent,
+    ReportbydateComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule
