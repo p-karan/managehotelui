@@ -1,39 +1,9 @@
-<!--<div class="main-container">
-<div class="navbar">
-  &lt;!&ndash;<div class="menu-item-home">Home</div>&ndash;&gt;
-  <a [routerLink]="['/home']">Home</a>
-  <a [routerLink]="['/hotel']">Hotels</a>
-  <a [routerLink]="['/room']">Rooms</a>
-  &lt;!&ndash;<a [routerLink]="['/gallery']">Gallery</a>&ndash;&gt;
-  <div class="subnav">
-    <button class="subnavbtn">Manage Hotels <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a [routerLink]="['/addhotel']" (click)="getAdd()">Add Hotel</a>
-      <a [routerLink]="['/updatehotel']" >Update Hotel</a>
-    </div>
-  </div>
-  <div class="subnav">
-    <button class="subnavbtn">Manage Rooms <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a [routerLink]="['/addroom']" >Add Rooms</a>
-      <a [routerLink]="['/updatehotel']" >Update Rooms</a>
-    </div>
-  </div>
- &lt;!&ndash; <a [routerLink]="['/booking']">Booking</a>&ndash;&gt;
-  <a [routerLink]="['/generate']">Generate Report</a>
-  <a [routerLink]="['/login']" [ngStyle]="{display: showLogin}">Login</a>
-  <a [routerLink]="['/logout']" [ngStyle]="{display : showLogout}">Logout</a>
-</div>
-</div>-->
-<!--Implementation with navlink-->
-<div class="main-container">
-  <div class="navbar">
-    <ul>
+<div class = "navbar">
+    <ul id="buttons">
       <li *ngFor="let eachLink of links">
         <a [routerLink]="[eachLink.link]" [title]="[eachLink.title]" appCustom> {{eachLink.text}}</a>
       </li>
       <li><a [routerLink]="['/login']" [ngStyle]="{display: showLogin}">Login</a></li>
       <li><a [routerLink]="['/logout']" [ngStyle]="{display : showLogout}">Logout</a></li>
     </ul>
-  </div>
 </div>

@@ -1,18 +1,18 @@
 <!--<h3>{{statusMessage}}</h3>-->
-<table class="table table-striped">
+  <table class="table table-bordered table-dark">
   <tbody>
-  <tr>
-    <th>Hotel Name</th>
-    <th>Hotel Location</th>
-    <th>Operational Status</th>
-    <th colspan=2>Update Actions</th>
+  <tr class="table-row">
+    <th scope="col">Hotel Name</th>
+    <th scope="col">Hotel Location</th>
+    <th scope="col">Operational Status</th>
+    <th scope="col" colspan=2>Update Actions</th>
   </tr>
-  <tr *ngFor="let eachHotel of hotelList">
-    <td>{{eachHotel.hotelName}}</td>
-    <td>{{eachHotel.addresses.addressCity}}</td>
-    <td>{{eachHotel.hotelOperationalStatus}}</td>
-    <td><button (click)="edit(eachHotel)" class="btn btn-info fa fa-edit"></button></td>
-    <td><button (click)="delete(eachHotel)" class="btn btn-danger fa fa-remove"></button></td>
+  <tr class="table-row" *ngFor="let eachHotel of hotelList">
+    <td scope="col">{{eachHotel.hotelName}}</td>
+    <td scope="col">{{eachHotel.addresses.addressCity}}</td>
+    <td scope="col">{{eachHotel.hotelOperationalStatus}}</td>
+    <td scope="col"><button (click)="edit(eachHotel)" class="btn btn-info fa fa-edit"></button></td>
+    <td scope="col"><button (click)="delete(eachHotel)" class="btn btn-danger fa fa-remove"></button></td>
   </tr>
   </tbody>
 </table>

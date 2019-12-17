@@ -1,17 +1,17 @@
 <div class="search-container">
   <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-      <table>
+      <table class="tbl_chk_availability">
         <thead>
         <tr>
-          <th>City</th>
-          <th>Check-In Date</th>
-          <th>Check-Out Date</th>
+          <th class="tbl_chk_availability_hd">City</th>
+          <th class="tbl_chk_availability_hd">Check-In Date</th>
+          <th class="tbl_chk_availability_hd">Check-Out Date</th>
         </tr>
         </thead>
         <tbody>
         <tr>
           <ng-container *ngFor="let eachConfig of formConfigSelect">
-          <td>
+          <td class="tbl_chk_availability_detail">
             <select formControlName={{eachConfig.name}}>
               <option *ngFor="let eachCity of City"
                       [value]='eachCity'>{{eachCity}}</option>
@@ -19,7 +19,7 @@
           </td>
           </ng-container>
           <ng-container *ngFor="let eachConfig of formConfig">
-          <td>
+          <td class="tbl_chk_availability_detail">
             <input type={{eachConfig.type}} placeholder={{eachConfig.placeholder}}
                    formControlName={{eachConfig.name}}>
           </td>
@@ -27,7 +27,7 @@
             <input type="date" name="date_toDate">
           </td>-->
           </ng-container>
-          <td>
+          <td class="tbl_chk_availability_detail">
             <!--<input (click)="fetch()" type="Submit" name="btn_Submit" value="Search"/>-->
             <button (click)="onSubmit()">Search</button>
             <!--<button (click)="fetch""Search"/>-->
@@ -35,11 +35,13 @@
         </tr>
         </tbody>
       </table>
+
     <hr/>
-    <table class="table table-bordered">
+
+    <table class="tbl_chk_availability_1">
 
       <tr *ngFor="let eachResult of searchResultList" >
-        <td>
+        <td class="tbl_chk_availability_detail_1">
           <div class="item_flex-column">
             <p>Hotel Name</p>
         {{eachResult.hotelName}}
@@ -58,14 +60,14 @@
           </div>
         </td>
 
-        <td>
+        <td class="tbl_chk_availability_detail_1">
           <p>Room Type</p>
           {{eachResult.roomType}}
           <p>Description</p>
           {{eachResult.roomDescription}}
         </td>
 
-        <td>
+        <td class="tbl_chk_availability_detail_1">
           Room Tarriff:
           {{eachResult.ratePerNight}}
           <br/>

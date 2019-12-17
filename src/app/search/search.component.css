@@ -1,1 +1,83 @@
+.tbl_chk_availability{
+  border-spacing:25px;
+  padding:10px;
+  background: #000;
+  color: #fff;
+  position: absolute;
+  top: 18%;
+  left: 20%;
+  box-sizing: border-box;
+  border-radius:20px;
+  opacity:0.7;
+  font-family: SansSerif, sans-serif;
+}
 
+.tbl_chk_availability_1{
+  border-spacing:25px;
+  padding:10px;
+  background: #000;
+  color: #fff;
+  position: absolute;
+  top: 36%;
+  left: 20%;
+  box-sizing: border-box;
+  border-radius:20px;
+  opacity:0.7;
+  font-family: SansSerif, sans-serif;
+}
+
+.tbl_chk_availability:hover{
+  opacity:1.0;
+}
+
+.tbl_chk_availability_hd{
+  /*border:1px solid #fb2525;*/
+  position: relative;
+  border-radius:50px;
+  border-style: none;
+  padding:10px 15px;
+  /*margin:5px 5px;*/
+  display: table-inline;
+  cursor:pointer;
+  text-align:center;
+  transition: all 0.3s;
+  font-family: SansSerif, sans-serif ;
+}
+
+.tbl_chk_availability_hd_1{
+  /*border:1px solid #fb2525;*/
+  position: relative;
+  border-radius:50px;
+  border-style: none;
+  padding:10px 15px;
+  /*margin:5px 5px;*/
+  display: table-inline;
+  cursor:pointer;
+  text-align:center;
+  transition: all 0.3s;
+  font-family: SansSerif, sans-serif ;
+}
+
+.tbl_chk_availability_detail{
+  /*border:3px solid #fb2525;*/
+  position: relative;
+  border-radius:50px;
+  padding:10px 15px;
+  margin:5px 5px;
+  display: table-inline;
+  cursor:pointer;
+  text-align:center;
+  transition: all 0.3s;
+}
+
+.tbl_chk_availability_detail_1{
+  /*border:3px solid #fb2525;*/
+  position: relative;
+  border-radius:50px;
+  padding:10px 15px;
+  margin:5px 5px;
+  display: table-inline;
+  cursor:pointer;
+  text-align:center;
+  transition: all 0.3s;
+}
