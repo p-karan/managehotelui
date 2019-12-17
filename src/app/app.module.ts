@@ -30,6 +30,7 @@ import { CreatebookingComponent } from './createbooking/createbooking.component'
 import { LogoutComponent } from './logout/logout.component';
 import { CustomDirective } from './custom.directive';
 import { ReportsComponent } from './reports/reports.component';
+import { ShowbookinghistoryComponent } from './showbookinghistory/showbookinghistory.component';
 import { ReportmenuComponent } from './reportmenu/reportmenu.component';
 import { ReportbydateComponent } from './reportbydate/reportbydate.component';
 
@@ -39,15 +40,14 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegistrationComponent },
   {path: 'addhotel', component: AddhotelComponent },
+/*  {path: 'addHotel/:hotel', component: AddhotelComponent },*/
   {path: 'hotel', component: HotelComponent},
   {path: 'room', component: RoomComponent},
   {path: 'booking', component: CreatebookingComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: 'addroom', component: AddroomsComponent},
-  {path: 'report', component: ReportsComponent},
-  {path: 'reportByDate', component: ReportbydateComponent},
-  {path: 'reportmenu', component: ReportmenuComponent},
   {path: 'logout', component: LogoutComponent},
+  {path: 'history', component: ShowbookinghistoryComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -79,6 +79,7 @@ const routes: Routes = [
     CustomDirective,
     CreatebookingComponent,
     ReportsComponent,
+    ShowbookinghistoryComponent,
     ReportmenuComponent,
     ReportbydateComponent
   ],

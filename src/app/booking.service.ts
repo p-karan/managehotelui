@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Booking} from './booking';
+import {Searchresult} from "./searchresult";
 import {Hotel} from "./hotel";
 
 
@@ -16,6 +17,10 @@ export class BookingService {
 
   addBooking(newBooking: Booking): Observable<Booking> {
     return this.client.post<Booking>(this.baseURL, newBooking);
+  }
+
+  searchBookingByUserName(userName: string): Observable<Booking[]> {
+    return this.client.get<Booking[]>(this.baseURL + '/userName' + '/' + userName);
   }
 
   findAllByHotelId(hotelId: string): Observable<Booking[]> {
