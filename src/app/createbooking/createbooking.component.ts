@@ -3,7 +3,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BookingService} from '../booking.service';
 import {Router} from '@angular/router';
 import {Booking} from '../booking';
-import {Payment} from '../payment';
 import {DataService} from '../data.service';
 import {Searchresult} from '../searchresult';
 import {SessionService} from '../session.service';
@@ -21,7 +20,11 @@ export class CreatebookingComponent implements OnInit {
   ToDate: Date;
   noOfDaysBooked: number;
   totalPaymentAmount: number;
-  paymentDate = new Date();
+/*  dateDD: string;
+  dateMM: string;
+  dateYY: string;
+  formatDate: string;
+  paymentDate: Date;*/
   booking: Booking =  {
     bookingId: 0,
     bookedFromDate: new Date(),
@@ -38,13 +41,7 @@ export class CreatebookingComponent implements OnInit {
     roomId: 0,
     userId: 0,
     userName: '',
-    paymentSet: {
-        paymentId: 0,
-        payStatus: '',
-        payAmount: 0,
-        payDate: new Date(),
-        payMode: '',
-      }
+    payMode: ''
   };
   searchResultReceived: Searchresult = {
     roomId: 0,
@@ -116,6 +113,11 @@ export class CreatebookingComponent implements OnInit {
     this.data.shareFromDate.subscribe(receiveFromDate => this.booking.bookedFromDate = receiveFromDate);
     this.ToDate = new Date(this.booking.bookedToDate);
     this.FromDate = new Date(this.booking.bookedFromDate);
+/*    this.dateDD = new Date().getDate().toString();
+    this.dateMM = new Date().getMonth().toString();
+    this.dateYY = new Date().getFullYear().toString();
+    this.formatDate = this.dateYY + '-' + this.dateMM + '-' + this.dateDD;
+    this.paymentDate = new Date(this.formatDate);*/
     console.log('to date:');
     console.log(this.ToDate.getDay());
     console.log('from date:');
@@ -138,30 +140,22 @@ export class CreatebookingComponent implements OnInit {
     bookedFromDate: new FormControl(this.booking.bookedFromDate, Validators.required),
     bookedToDate: new FormControl(this.booking.bookedToDate, [Validators.required]),
     daysBooked: new FormControl(this.noOfDaysBooked),
-    checkInDateTime: new FormControl(this.booking.checkInDateTime),
-    checkOutDateTime: new FormControl(this.booking.checkOutDateTime),
+    checkInDateTime: new FormControl(null),
+    checkOutDateTime: new FormControl(null),
     bookingAmount: new FormControl(this.totalPaymentAmount, [Validators.required]),
     noOfAdults: new FormControl(this.booking.noOfAdults, Validators.min(1)),
     noOfChildren: new FormControl(this.booking.noOfChildren),
     bookedBy: new FormControl(sessionStorage.getItem('userName'), Validators.required),
-    bookingStatus: new FormControl(this.booking.bookedBy),
+    bookingStatus: new FormControl('CONFIRMED'),
     hotelId: new FormControl(this.searchResultReceived.hotelId),
     roomId: new FormControl(this.searchResultReceived.roomId),
-    userId: new FormControl(this.booking.userId),
-    userName: new FormControl(this.booking.userName),
-    paymentSet: new FormGroup(
-      {
-        paymentId: new FormControl(this.booking.paymentSet.paymentId),
-        payStatus: new FormControl(this.booking.paymentSet.payStatus),
-        payAmount: new FormControl(this.booking.paymentSet.payAmount, Validators.required),
-        payDate: new FormControl(new Date(), Validators.required),
-        payMode: new FormControl(this.booking.paymentSet.payMode, Validators.required),
-      }
-    )
-  });
+    userId: new FormControl(sessionStorage.getItem('userId')),
+    userName: new FormControl(sessionStorage.getItem('userName')),
+    payMode: new FormControl('CARD', Validators.required)});
 }
 
   onSubmit() {
+    console.log('OnSubmit called from createbooking');
     console.log(this.createBookingForm.value);
     this.service.addBooking(this.createBookingForm.value).subscribe(data => console.log(data));
   }

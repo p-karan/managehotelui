@@ -1,5 +1,3 @@
-import {Payment} from './payment';
-
 export interface Booking {
 
   bookingId: number;
@@ -17,5 +15,5 @@ export interface Booking {
   roomId: number;
   userId: number;
   userName: string;
-  paymentSet: Payment;
+  payMode: string;
 }

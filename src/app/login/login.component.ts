@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
       this.loginStatus = 'Valid user';
       sessionStorage.setItem('userLogged', data.role);
       sessionStorage.setItem('userName', data.userName);
+      sessionStorage.setItem('userId', String(data.userId));
       console.log(data.role);
       console.log(data.userName);
       this.sessionservice.changeLoginStatus('logged');

@@ -1,7 +1,7 @@
 import {Addresses} from "./addresses";
 
 export interface User {
-  /*userId: number;*/
+  userId: number;
   userName: string;
   password: string;
   firstName: string;
