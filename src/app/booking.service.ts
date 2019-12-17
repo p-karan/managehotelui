@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Booking} from './booking';
+import {Hotel} from "./hotel";
 
 
 @Injectable({
@@ -16,5 +17,20 @@ export class BookingService {
   addBooking(newBooking: Booking): Observable<Booking> {
     return this.client.post<Booking>(this.baseURL, newBooking);
   }
+
+  findAllByHotelId(hotelId: string): Observable<Booking[]> {
+    console.log(this.baseURL + 'hotel/' + hotelId);
+    return this.client.get<Booking[]>(this.baseURL + 'hotel/' + hotelId);
+  }
+
+  /*findAll(): Observable<Hotel[]> {
+    return this.client.get<Hotel[]>(this.baseURL);
+  }
+
+
+
+  findAllByCity(city: string): Observable<Hotel[]> {
+    return this.client.get<Hotel[]>(this.baseURL + '/' + city);
+  }*/
 
 }
