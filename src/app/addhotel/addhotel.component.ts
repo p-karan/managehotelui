@@ -162,6 +162,7 @@ export class AddhotelComponent implements OnInit {
     if (this.btnText === 'Add Hotel') {
      /* this.service.addHotel(this.addHotelForm.value).subscribe(data => console.log(data), (error) => this.getMessage(error.error.text));
       console.log('Record added successfully');*/
+     console.log(this.addHotelForm.value);
       this.service.addHotel(this.addHotelForm.value).subscribe(data => this.getMessage(data));
       this.addHotelForm.reset();
       console.log('Record added successfully');
@@ -182,8 +183,7 @@ export class AddhotelComponent implements OnInit {
       console.log('Record updated successfully');
       /*this.router.navigate(['/updatehotel']);*/
     }
-
-
+    this.addHotelForm.reset();
   }
 
 }

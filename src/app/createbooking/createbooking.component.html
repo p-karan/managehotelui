@@ -2,31 +2,37 @@
   <div class="createbooking_add_container">
     <form [formGroup]="createBookingForm" (ngSubmit)="onSubmit()">
       <p>{{titleBookingText}}</p>
-      <p>Booking Details</p>
-      <div>
+      <p>Booking From & To Date</p>
+      <div class="frm-cntrl-textDetails">
         <!--<input type="date" [(ngModel)]="bookedFrom" formControlName="bookedFromDate">-->
         <input type="date" formControlName="bookedFromDate">
         <input type="date" formControlName="bookedToDate">
         <input type="text" formControlName="daysBooked" [readOnly]=true>
-        <!--<span>Difference: {{ dateFrom | amDifference : dateTo : 'days' }} days</span>-->
+      <!--  <span *ngIf= {bookedFromDate} | date } ></span>-->
+        <!--<span *ngIf="(loginForm.get(eachConfig.name).hasError('maxlength') || loginForm.get(eachConfig.name).hasError('minlength'))
+      && loginForm.get(eachConfig.name).touched">{{"User name length should be between 3 to 8 character"}}</span>-->
 
+        <!--<span>Difference: {{ dateFrom | amDifference : dateTo : 'days' }} days</span>-->
       </div>
-      <div>
-        <input type="number" formControlName="noOfAdults">
-        <input type="number" formControlName="noOfChildren">
+      <p>Guest Details</p>
+      <div class="frm-cntrl-textDetails">
+        <input type="number" formControlName="noOfAdults" placeholder="No of Adults">
+        <input type="number" formControlName="noOfChildren" placeholder="No of Children">
         <input type="number" formControlName="bookingAmount" [readOnly]=true>
       </div>
-      <div>
-        <input type="text" formControlName="bookedBy">
-        <input type="text" formControlName="bookingStatus" [readOnly]=true>
+      <p>Booking Status</p>
+      <div class="frm-cntrl-textDetails">
+        <input type="text" formControlName="bookedBy" placeholder="Booked By">
+        <input type="text" formControlName="bookingStatus" placeholder="Booking Status" [readOnly]=true >
       </div>
 
       <p>{{titlePaymentText}}</p>
       <div formGroupName="paymentSet">
-       <input type="number" formControlName="payAmount">
-        <input type="text" formControlName="payMode">
+        <div class="frm-cntrl-textDetails">
+        <input type="text" formControlName="payMode" placeholder="Select Mode">
         <input type="date" formControlName="payDate">
-        <input type="text" formControlName="payStatus" [readOnly]=true>
+        <input type="text" formControlName="payStatus" placeholder="Payment Status" [readOnly]=true>
+      </div>
       </div>
     </form>
     <div>

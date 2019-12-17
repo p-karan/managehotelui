@@ -11,8 +11,10 @@ import {Router} from '@angular/router';
 })
 export class RoomComponent implements OnInit {
 
+  p = 1;
   srchCity = '';
   srchRoomType: '';
+  srchAmt:0;
   roomList: Room[];
 
   constructor(private service: RoomService, private router: Router) { }

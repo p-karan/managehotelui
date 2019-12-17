@@ -12,8 +12,8 @@ import{ jqxScrollBarComponent } from 'jqwidgets-ng/jqxscrollbar';
 })
 export class HotelComponent implements OnInit {
 
-  // images = ["assets/img/Hotel/Taj.jpg", "assets/img/Hotel/Trident.jpg", "assets/img/Hotel/PalmBeach.jpg"];
   hotelList: Hotel[];
+  p = 1;
 
   constructor(private service: HotelService, private router: Router) { }
 

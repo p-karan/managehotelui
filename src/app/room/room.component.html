@@ -12,9 +12,12 @@
     <td>Search By</td>
     <td><input size="10" [(ngModel)]="srchRoomType"> </td>
     <td><input size="10" [(ngModel)]="srchCity"></td>
+    <td><input size="10" [(ngModel)]="srchAmt"></td>
+    <td></td>
   </tr>
 <!--  {{roomList|json}}-->
-  <tr *ngFor="let eachRoom of roomList | filter: 'roomType' : srchRoomType | filter: 'addressCity' : srchCity" >
+  <tr *ngFor="let eachRoom of roomList | filter: 'roomType' : srchRoomType | filter: 'addressCity' : srchCity
+      | filter: 'ratePerNight' : srchAmt| paginate: {itemsPerPage: 2, currentPage:p}">
     <td class="image">
       <div *ngIf="eachRoom.roomType == 'ECONOMY'">
         <img height="150" width="300" class="header-image" src="../../assets/img/Rooms/ECONOMY.jpg" alt="ECONOMY">
@@ -36,4 +39,5 @@
   </tr>
   </tbody>
 </table>
+  <pagination-controls align="center" (pageChange)="p=$event"></pagination-controls>
 </div>

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../user";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {LoginService} from "../login.service";
 import {SessionService} from "../session.service";
+import {AuthguardService} from "../authguard.service";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   userLogin: User;
   loginForm: FormGroup;
   loginStatus: string;
-  constructor(private fb: FormBuilder, private route: Router, private loginservice: LoginService, private sessionservice: SessionService) { }
+  constructor(private fb: FormBuilder, private route: Router, private loginservice: LoginService, private sessionservice: SessionService, private routes: ActivatedRoute) { }
 
   formConfig: any[] = [
     {
@@ -51,7 +52,8 @@ export class LoginComponent implements OnInit {
     this.loginForm.reset();
     if (username === data.userName && password === data.password) {
       this.loginStatus = 'Valid user';
-      sessionStorage.setItem('userLogged', 'yes');
+      sessionStorage.setItem('userLogged', data.role);
+      console.log(data.role);
       this.sessionservice.changeLoginStatus('logged');
       this.route.navigate(['/home']);
       console.log('Status:' + this.loginStatus);
@@ -68,6 +70,7 @@ export class LoginComponent implements OnInit {
     console.log('Login Form' + this.loginForm.get('userName').value);
     this.loginservice.findByUserName(this.loginForm.get('userName').value).
     subscribe(data => this.validation(data));
+    /*this.router.navigateByUrl(this.return);*/
   }
 
 }
