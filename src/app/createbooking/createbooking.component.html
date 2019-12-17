@@ -6,8 +6,8 @@
       <div class="frm-cntrl-textDetails">
         <!--<input type="date" [(ngModel)]="bookedFrom" formControlName="bookedFromDate">-->
         <input type="date" formControlName="bookedFromDate">
-        <input type="date" formControlName="bookedToDate">
-        <input type="text" formControlName="daysBooked" [readOnly]=true>
+        <input type="date" formControlName="bookedToDate" (blur)="differeBetweentheseTwodate()" )>
+        <input type="text" formControlName="daysBooked" [readOnly]=true >
       <!--  <span *ngIf= {bookedFromDate} | date } ></span>-->
         <!--<span *ngIf="(loginForm.get(eachConfig.name).hasError('maxlength') || loginForm.get(eachConfig.name).hasError('minlength'))
       && loginForm.get(eachConfig.name).touched">{{"User name length should be between 3 to 8 character"}}</span>-->

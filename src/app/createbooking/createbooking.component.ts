@@ -117,7 +117,11 @@ export class CreatebookingComponent implements OnInit {
     this.service.addBooking(this.createBookingForm.value).subscribe(data => console.log(data));
   }
 
-  booked
+  differeBetweentheseTwodate(){
+
+    console.log(this.createBookingForm.controls)
+
+  }
 
 }
 
