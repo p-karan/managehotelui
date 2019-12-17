@@ -109,7 +109,6 @@ export class CreatebookingComponent implements OnInit {
       }
     )
   })
-
 }
 
   onSubmit() {
