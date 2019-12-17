@@ -27,6 +27,7 @@ import { UpdateroomsComponent } from './updaterooms/updaterooms.component';
 import { ManageroomsComponent } from './managerooms/managerooms.component';
 import { FilterPipe } from './filter.pipe';
 import { CreatebookingComponent } from './createbooking/createbooking.component';
+import { Addrooms2Component } from './addrooms2/addrooms2.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CustomDirective } from './custom.directive';
 import { ReportsComponent } from './reports/reports.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
   {path: 'room', component: RoomComponent},
   {path: 'booking', component: CreatebookingComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
-  {path: 'addroom', component: AddroomsComponent},
+  {path: 'addroom', component: Addrooms2Component},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -70,10 +71,7 @@ const routes: Routes = [
     RoomComponent,
     FilterPipe,
     CreatebookingComponent,
-    LogoutComponent,
-    CustomDirective,
-    CreatebookingComponent,
-    ReportsComponent
+    Addrooms2Component
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule

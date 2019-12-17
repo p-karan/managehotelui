@@ -1,91 +1,61 @@
-<div class="addrooms">
-  <div class="addroom-container">
-    <form [formGroup]="searchHotelForm" (ngSubmit)="onSubmit()">
-      <table class = "city-panel">
-        <tr>
-          <td>City</td>
-          <ng-container *ngFor="let eachConfig of formConfigSelect">
-            <td>
-              <select formControlName={{eachConfig.name}} (change)="fetch($event.target.value)" >
-                <option *ngFor="let eachCity of City"
-                        [value]='eachCity'>{{eachCity}}</option>
-              </select>
-              <!--<span *ngIf="searchHotelForm.get(eachConfig.name).hasError('required')
-  && searchHotelForm.get(eachConfig.name).touched" class="text-danger">{{eachConfig.errorMsg}}</span>-->
-            </td>
-           <!-- <td>
-              <button (click)="fetch(eachConfig.name)">Fetch Hotels</button>
-            </td>-->
-          </ng-container>
-          <td>Hotel Name</td>
-          <ng-container *ngFor="let eachConfig of formConfigSelectHotelName">
-            <td>
-              <select formControlName={{eachConfig.name}}>
-                <option *ngFor="let eachHotel of hotelList"
-                        [value]='eachHotel.hotelName'>{{eachHotel.hotelName}}</option>
-              </select>
-            </td>
-            <td>
-              <button (click)="addRoom()">Add Rooms</button>
-            </td>
-          </ng-container>
-        </tr>
-      </table>
-    </form>
-  </div>
-      <!--<table class="hotel-panel">
-        <tbody>
-        <tr>
-          <td>Hotel Name</td>
-          <ng-container *ngFor="let eachConfig of formConfigSelectHotelName">
-            <td>
-              <select formControlName={{eachConfig.name}}>
-                <option *ngFor="let eachHotel of hotelList"
-                        [value]='eachHotel.hotelName'>{{eachHotel.hotelName}}</option>
-              </select>
-            </td>
-          </ng-container>
-        </tr>
-        &lt;!&ndash;<tr *ngFor="let eachHotel of hotelList">
-          <td>{{eachHotel.hotelName}}</td>
-          <td><button class="add-room-btn">Add Rooms</button></td>
-        </tr>&ndash;&gt;
-        </tbody>
-      </table>-->
-  <!--<div class="addhotel">
-    &lt;!&ndash;<img src="assets/img/sign_up.jpg" class="img_signUp">&ndash;&gt;
-    <div class="addhotel_add_container">
 
-      <form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()"  ngNativeValidate action="">
-        <h3>{{statusMessage}}</h3>
-        <p>{{titleText}}</p>
-
-        <div class="frm-cntrl-textDetails">
-          <label>Hotel Name:</label>
-          <input type="text"  formControlName="hotelName" value="{{eachHotel.hotelName}}" [readOnly] = true >
-        </div>
-        <p>Room Details</p>
-        <div class="frm-cntrl-textDetails">
-          <label>Enter Rate Per Night:</label>
-          <input type="number"  formControlName="ratePerNight" placeholder="Enter Rate Per Night" required/>
-        </div>
-        <div class="frm-cntrl-textDetails">
-          <label>Enter Room Number:</label>
-          <input type="number"  formControlName="roomNo" placeholder="Enter Discount percentage (Optional)" />
-        </div>
-        <div class="frm-cntrl-textDetails">
-          <label>Enter Room Type:</label>
-          <input type="text"  formControlName="roomType" placeholder="ECONOMY/DELUXE/SUITE" required/>&nbsp;
-        </div>
-        <div class="frm-cntrl-textDetails">
-          <label>Enter Room Description:</label>
-          <textarea  formControlName="roomDescription" placeholder="Enter Room Description"  cols="50" rows="5" required></textarea>
-        </div>
-        <div class="btn-submit">
-          <button>{{btnText}}</button>
-        </div>
-
-      </form>
+<div class="main-container">
+  <form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()">
+    {{addRoomForm.value |json}}
+    <ng-container *ngFor="let eachConfig of formConfig">
+    <div class="city-drop-down">
+      <div>
+    <!--    <ng-container *ngFor="let eachConfig of formConfigCityList">-->
+          <div>
+            <label>City</label>
+            <select formControlName={{eachConfig.name}} (change)="getHotelList($event.target.value)">
+              <option *ngFor="let eachCity of City"
+                      [value]='eachCity'>{{eachCity}}</option>
+            </select>
+          </div>
+        <!--</ng-container>-->
+      </div>
+      <!--</form>-->
     </div>
--->
+
+    <div class="hotel-drop-down">
+      <!--<form [formGroup]="searchHotelForm" (ngSubmit)="onSubmit()">-->
+        <!--<ng-container *ngFor="let eachConfig of formConfigHotelNameList">-->
+          <div>
+            <label>Hotel Name</label>
+            <select formControlName={{eachConfig.name}} (change)="fetch($event.target.value)">
+              <option *ngFor="let eachHotel of hotelList"
+                      [value]='eachHotel.hotelName'>{{eachHotel.hotelName}}</option>
+            </select>
+          </div>
+        <!--</ng-container>-->
+
+      <!--</form>-->
+    </div>
+
+    <div class="add-form-container">
+      <div>
+        <!--<form [formGroup]="addRoomForm" (ngSubmit)="onSubmit()">-->
+        <div>
+          <div>
+            <label>Hotel Id</label>
+            {{this.hotelReturned.hotelId}}
+          </div>
+          <!--<ng-container *ngFor="let eachConfig of formConfigRoom">-->
+            <label>{{eachConfig.label}}</label>
+            <input type="{{eachConfig.type}}" name="{{eachConfig.name}}" placeholder="{{eachConfig.placeholder}}">
+
+          <!--</ng-container>-->
+        </div>
+        <div>
+          <button>Add</button>
+        </div>
+
+        <!--</form>-->
+      </div>
+    </div>
+    </ng-container>
+  </form>
 </div>
+
+
