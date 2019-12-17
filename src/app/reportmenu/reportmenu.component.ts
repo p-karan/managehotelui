@@ -8,12 +8,6 @@ import {Navlink} from "../navlink";
 })
 export class ReportmenuComponent implements OnInit {
 
- /* links: Navlink[] = [
-    {link: 'report', text: 'View Bookings of specific hotel'},
-    {link: 'showcustomer', text: 'View bookings for specified date'},
-    // {link: 'passenger', text: 'Passenger'}
-  ]*/
-
   constructor() { }
 
   ngOnInit() {

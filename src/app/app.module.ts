@@ -39,14 +39,13 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegistrationComponent },
   {path: 'addhotel', component: AddhotelComponent },
-/*  {path: 'addHotel/:hotel', component: AddhotelComponent },*/
   {path: 'hotel', component: HotelComponent},
   {path: 'room', component: RoomComponent},
   {path: 'booking', component: CreatebookingComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: 'addroom', component: AddroomsComponent},
   {path: 'report', component: ReportsComponent},
-  {path: 'reportDate', component: ReportbydateComponent},
+  {path: 'reportByDate', component: ReportbydateComponent},
   {path: 'reportmenu', component: ReportmenuComponent},
   {path: 'logout', component: LogoutComponent},
   {path: '**', redirectTo: 'home'}

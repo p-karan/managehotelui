@@ -14,7 +14,7 @@ export class RoomComponent implements OnInit {
   p = 1;
   srchCity = '';
   srchRoomType: '';
-  srchAmt:0;
+  srchAmt:'';
   roomList: Room[];
 
   constructor(private service: RoomService, private router: Router) { }

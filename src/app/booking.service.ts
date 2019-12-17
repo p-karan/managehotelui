@@ -23,6 +23,11 @@ export class BookingService {
     return this.client.get<Booking[]>(this.baseURL + 'hotel/' + hotelId);
   }
 
+  findAllBookingBySpecificDate(bookingDate: Date): Observable<Booking[]> {
+    console.log(this.baseURL + 'specificDate/' + bookingDate + '/'+ bookingDate);
+    return this.client.get<Booking[]>(this.baseURL + 'specificDate/' + bookingDate + '/'+ bookingDate);
+  }
+
   /*findAll(): Observable<Hotel[]> {
     return this.client.get<Hotel[]>(this.baseURL);
   }
