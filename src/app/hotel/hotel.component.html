@@ -6,7 +6,7 @@
     <th>Description</th>
     <th>Rating</th>
   </tr>
-  <tr *ngFor="let eachHotel of hotelList">
+  <tr *ngFor="let eachHotel of hotelList | paginate: {itemsPerPage: 2, currentPage:p}">
     <td>
       <div *ngIf="eachHotel.hotelName == 'Royal Mumbai LLC'">
         <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg" alt="Royal Mumbai LLC">
@@ -22,7 +22,7 @@
       </div>
       <div *ngIf="(eachHotel.hotelName !== 'Royal Mumbai LLC') && (eachHotel.hotelName !== 'Taj Mahal LLC') &&
       (eachHotel.hotelName !== 'Trident') && (eachHotel.hotelName !== 'Taj Landmark Mumbai LLC')">
-        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg" alt="Test Image">
+        <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/Trident.jpg" alt="Test Image">
       </div>
     </td>
     <td>
@@ -40,6 +40,7 @@
   </tr>
   </tbody>
 </table>
+<pagination-controls align="center" (pageChange)="p=$event"></pagination-controls>
 
 <!--
 <td>{{eachHotel.hotelName}}</td>

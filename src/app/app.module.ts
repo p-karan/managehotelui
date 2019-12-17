@@ -29,6 +29,7 @@ import { FilterPipe } from './filter.pipe';
 import { CreatebookingComponent } from './createbooking/createbooking.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CustomDirective } from './custom.directive';
+import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -42,7 +43,6 @@ const routes: Routes = [
   {path: 'booking', component: CreatebookingComponent},
   {path: 'updatehotel', component: UpdatehotelComponent},
   {path: 'addroom', component: AddroomsComponent},
-  {path: 'logout', component: LogoutComponent},
   {path: '**', redirectTo: 'home'}
 ];
 
@@ -71,7 +71,9 @@ const routes: Routes = [
     FilterPipe,
     CreatebookingComponent,
     LogoutComponent,
-    CustomDirective
+    CustomDirective,
+    CreatebookingComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), NgxPaginationModule
