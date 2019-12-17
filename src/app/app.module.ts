@@ -28,6 +28,9 @@ import { ManageroomsComponent } from './managerooms/managerooms.component';
 import { FilterPipe } from './filter.pipe';
 import { CreatebookingComponent } from './createbooking/createbooking.component';
 import { Addrooms2Component } from './addrooms2/addrooms2.component';
+import { LogoutComponent } from './logout/logout.component';
+import { CustomDirective } from './custom.directive';
+import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
