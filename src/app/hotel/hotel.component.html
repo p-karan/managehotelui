@@ -1,13 +1,13 @@
-<table class="table table-striped table-bordered">
+<table class="tbl_chk_availability">
   <tbody>
   <tr>
-    <th>Images</th>
-    <th>Hotel</th>
-    <th>Description</th>
-    <th>Rating</th>
+    <th class="tbl_chk_availability_hd">Images</th>
+    <th class="tbl_chk_availability_hd">Hotel</th>
+    <th class="tbl_chk_availability_hd">Description</th>
+    <th class="tbl_chk_availability_hd">Rating</th>
   </tr>
   <tr *ngFor="let eachHotel of hotelList | paginate: {itemsPerPage: 2, currentPage:p}">
-    <td>
+    <td class="tbl_chk_availability_detail">
       <div *ngIf="eachHotel.hotelName == 'Royal Mumbai LLC'">
         <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/PalmBeach.jpg" alt="Royal Mumbai LLC">
       </div>
@@ -25,7 +25,7 @@
         <img height="150" width="300" class="header-image" src="../../assets/img/Hotel/Trident.jpg" alt="Test Image">
       </div>
     </td>
-    <td>
+    <td class="tbl_chk_availability_detail">
       <div>
         <li><h3>{{eachHotel.hotelName}}</h3></li>
         <li>{{eachHotel.addresses.addressStreet}}</li>
@@ -35,12 +35,13 @@
         <li>{{eachHotel.addresses.primaryPhone}}</li>
       </div>
      </td>
-    <td>{{eachHotel.hotelDescription}}</td>
-    <td>{{eachHotel.rating}}</td>
+    <td class="tbl_chk_availability_detail">{{eachHotel.hotelDescription}}</td>
+    <td class="tbl_chk_availability_detail">{{eachHotel.rating}}</td>
   </tr>
   </tbody>
+  <pagination-controls align="center" (pageChange)="p=$event"></pagination-controls>
 </table>
-<pagination-controls align="center" (pageChange)="p=$event"></pagination-controls>
+
 
 <!--
 <td>{{eachHotel.hotelName}}</td>
