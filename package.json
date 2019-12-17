@@ -19,14 +19,18 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "rxjs": "~6.4.0",
-    "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
+    "angular-moment": "^1.3.0",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
-    "ngx-pagination": "^5.0.0",
+    "html2canvas": "^1.0.0-rc.5",
     "jqwidgets-ng": "^8.3.2",
-    "angular-moment": "^1.3.0"
+    "jspdf": "^1.5.3",
+    "jsx-pdf": "^2.1.1",
+    "ngx-pagination": "^5.0.0",
+    "pdfmake": "^0.1.63",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.20",
