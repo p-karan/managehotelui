@@ -31,5 +31,6 @@
   height: 75%;
   display: flex;
   flex-direction: column;
-  background-color: blue;
+  background-color: darkgray;
+  background-image: linear-gradient(to left, black, grey);
 }

@@ -1,63 +1,56 @@
-/*.createbooking{
-  width: 1000px;
-  height: 475px;
-  background: #000;
+.bookingbox{
+  width: 500px;
+  height: 500px;
+  background: #000000;
   color: #fff;
-  top: 53%;
-  left: 52%;
-  position: fixed;
+  top: 52%;
+  left: 50%;
+  position: absolute;
   transform: translate(-50%,-50%);
   box-sizing: border-box;
-  padding:60px 30px;
+  padding:70px 30px;
   border-radius:20px;
   opacity:0.7;
-  overflow:hidden;
-  display: flex;
-  justify-content: space-evenly;
 }
-.frm-cntrl-textDetails{
-  display: flex;
-  flex-direction: row;
+
+.bookingbox:hover{
+  opacity:1.0;
 }
-.columnValues{
-  display: flex;
-  flex-direction: column;
+
+h3{
+  font-size: 24px;
+}
+
+.bookingbox p{
+  margin:0;
+  padding:0;
+  font-weight: bold;
+}
+.bookingbox input{
+  width:60%;
+  margin-bottom:10px;
+}
+
+.bookingbox input[type="text"], input[type="date"], input[type="number"]{
+  border:none;
+  /*border-bottom:1px solid #fff;*/
+  background: transparent;
+  outline:none;
+  height:30px;
+  color: #fff;
+  font-size:16px;
+  margin-bottom: 0px;
+  padding-left: 20px;
+}
+
+.span-set{
+  white-space: nowrap;
+  display: inline;
+}
+/*.span{
+  display: inline;
 }*/
-/*
-.createbooking_add_container{
-  display: flex;
-  justify-content: space-evenly;
-}
-*/
-
-/*
-.frm-cntrl-address{
-  display: flex;
-  flex-direction: row;
-}
-
-.frm-cntrl-email{
-  display: flex;
-  flex-direction: row;
-}
-
-.frm-cntrl-contact{
-  display: flex;
-  flex-direction: row;
-}*/
-
-
-
-
-/*
-
-.addbooking input{
-  width:30%;
-  margin-bottom:5px;
-}
-
-
-.addbooking input[type="submit"]{
+.bookingbox input[type="button"]{
   border:none;
   background: #fb2525;
   outline:none;
@@ -65,11 +58,10 @@
   color: #fff;
   font-size:18px;
   border-radius:20px;
-  left:35%;
-  position:relative;
+  margin-bottom: 5px;
 }
 
-.addbooking button{
+#button{
   border:none;
   background: #fb2525;
   outline:none;
@@ -77,33 +69,31 @@
   color: #fff;
   font-size:18px;
   border-radius:20px;
-  left:35%;
-  position:relative;
+  margin-bottom: 5px;
 }
 
-.addbooking button:hover{
+#button:hover{
   background: lightblue;
   cursor:pointer;
   color:#000;
 }
-*/
 
-/*.addbooking:hover{
-  opacity:1.0;
-}
 .label {
   float:left;
-  margin: -5px 0;
+  margin: 5px 0;
+  padding-right: 10px;
 }
 
-.addbooking a{
-  text-decoration:none;
-  font-size: 14px;
-  line-height: 20px;
-  color: darkgrey;
+.bookingbox h3{
+  margin:0;
+  padding:0 0 20px;
+  text-align: center;
+  font-size: 22px;
 }
 
-.addbooking a:hover{
-  color: #ffc107;
-}*/
 
+.booking-status-message{
+  color: #fb2525;
+  text-align: center;
+  padding-top: 20px;
+}
