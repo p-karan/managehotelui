@@ -1,4 +1,3 @@
-/*
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Hotel} from "../hotel";
@@ -33,11 +32,11 @@ export class Addrooms2Component implements OnInit {
   };
   constructor( private route: Router, private hotelService: HotelService, private roomservice: RoomService) { }
 
- /!* ngOnInit() {
-    this.addRoomForm = new FormGroup({
+  ngOnInit() {
+   /* this.addRoomForm = new FormGroup({
       hotelId: new FormControl(this.hotel.hotelId)
-    }
-  }*!/
+    }*/
+  }
 
 }
-*/
+
