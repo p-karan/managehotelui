@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <tr>
+    <th>Booking Id</th>
+    <th>Booked From Date</th>
+    <th>Booked To Date</th>
+    <th>Booking Amount</th>
+  </tr>
+  <tr *ngFor="let eachBooking of bookingList">
+    <td>{{eachBooking.bookingId}}</td>
+    <td>{{eachBooking.bookedFromDate}}</td>
+    <td>{{eachBooking.bookedToDate}}</td>
+    <td>{{eachBooking.bookingAmount}}</td>
+  </tr>
+</table>
