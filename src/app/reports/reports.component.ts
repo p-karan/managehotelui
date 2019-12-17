@@ -6,8 +6,7 @@ import {HotelService} from '../hotel.service';
 import {Hotel} from "../hotel";
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
-
-
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-reports',
@@ -16,7 +15,7 @@ import html2canvas from 'html2canvas';
 })
 export class ReportsComponent implements OnInit {
 
-  constructor(private bookingService: BookingService, private router: Router, private hotelService: HotelService) { }
+  constructor(private bookingService: BookingService, private router: Router, private hotelService: HotelService, private location: Location) { }
   p = 0;
   bookingList: Booking[];
   hotelList: Hotel[];
@@ -42,8 +41,12 @@ export class ReportsComponent implements OnInit {
       const contentDataURL = canvas.toDataURL('application/pdf')
       const pdf = new jspdf('l', 'cm', 'a4');
       pdf.addImage(contentDataURL, 'PNG', 0, 0, 29.7, 21.0);
-      pdf.save(this.hotelId+'.pdf');
+      pdf.save('Report_Hotel Id_' + this.hotelId+'.pdf');
     });
+  }
+
+  backClicked() {
+    this.location.back();
   }
 
 }

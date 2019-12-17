@@ -1,9 +1,11 @@
 <div>
-<form (ngSubmit)="onSubmit(frm.value)" #frm=ngForm ngNativeValidate>
-  <div>
-    <label for="">Hotel Id</label>
+<h3 align="center">Generate Report By Hotel ID</h3>
+  <form (ngSubmit)="onSubmit(frm.value)" #frm=ngForm ngNativeValidate>
+  <div class="Button">
+    <label for="">Enter Hotel Id: </label>
     <input type="text" [(ngModel)]="hotelId" name="hotelId" required="required">
     <button>Generate Report</button> <button (click)="exportToPdf()">Export To PDF</button>
+    <button (click)="backClicked()">Report Menu</button>
   </div>
 </form>
   <div id = "MyPDF">
