@@ -1,6 +1,10 @@
 .footer-container{
   display: flex;
-  /*justify-content: space-evenly;*/
+  justify-content: space-evenly;
+  background-image: linear-gradient(to right, black, grey);
+  font-family: SansSerif, sans-serif;
+  font-size: 30px;
+  color: white;
 }
 .a{
   display: inline-block;
@@ -46,4 +50,8 @@ p{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*font-size: x-large;*/
   font-size: small;
+}
+
+.contact-us{
+  float: left;
 }
